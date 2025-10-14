@@ -1,9 +1,10 @@
 {
-    "name": "kadenzombie8.bimos.networking",
+    "name": "bimos.networking",
     "rootNamespace": "KadenZombie8.BIMOS.Networking",
     "references": [
         "GUID:303e84476c52562438a4cea31bf9b794",
-        "GUID:7c88a4a7926ee5145ad2dfa06f454c67"
+        "GUID:30817c1a0e6d646d99c048fc403f5979",
+        "GUID:72872094b21c16e48b631b2224833d49"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -16,18 +16,5 @@ namespace KadenZombie8.BIMOS
             if (rb.isKinematic) return;
             GrabbableManager.Instance.SendGrabMessage(__instance, hand);
         }
-
-        [HarmonyPatch("OnEnable")]
-        [HarmonyPrefix]
-        public static void OnEnablePrefix(Grabbable __instance)
-        {
-            GrabbableManager.Instance.RegisterGrabbable(__instance);
-        }
-        [HarmonyPatch("OnDestroy")]
-        [HarmonyPrefix]
-        public static void OnDestroyPrefix(Grabbable __instance)
-        {
-            GrabbableManager.Instance.UnregisterGrabbable(__instance);
-        }
     }
 }

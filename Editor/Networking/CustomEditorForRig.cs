@@ -1,5 +1,3 @@
-using FishNet.Component.Transforming;
-using FishNet.Object;
 using KadenZombie8.BIMOS;
 using KadenZombie8.BIMOS.Rig;
 using Unity.VisualScripting;

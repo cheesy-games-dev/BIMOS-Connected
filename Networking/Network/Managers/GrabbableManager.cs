@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using FishNet;
-using FishNet.Connection;
-using FishNet.Object;
-using FishNet.Transporting;
+using System.Linq;
+using KadenZombie8.BIMOS.Networking;
 using KadenZombie8.BIMOS.Rig;
+using Mirror;
+using UnityEditor.VersionControl;
 using UnityEngine;
 
 namespace KadenZombie8.BIMOS
@@ -12,45 +12,37 @@ namespace KadenZombie8.BIMOS
     {
         public static GrabbableManager Instance;
 
-        public readonly List<Grabbable> ActiveGrabbables = new();
+        // Grabbable Key and Reference
         public const float MAXVELOCITY = 0.25f;
         void Start()
         {
             Instance = this;
-            InstanceFinder.ServerManager.RegisterBroadcast<GrabMessage>(ReceivedGrabMessage);
+            NetworkServer.RegisterHandler<GrabMessage>(ReceivedGrabMessage);
         }
-        public void RegisterGrabbable(Grabbable arg)
-        {
-            ActiveGrabbables.Add(arg);
-        }
-        public void UnregisterGrabbable(Grabbable arg)
-        {
-            ActiveGrabbables.Remove(arg);
-        }
+
         /// <summary>
         /// This is a grab message from the client sent to the server
         /// </summary>
         public virtual void SendGrabMessage(Grabbable grabbable, Hand hand)
         {
-            var index = ActiveGrabbables.IndexOf(grabbable);
-            GrabMessage message = new(index, hand.PhysicsHandCollider.attachedRigidbody.linearVelocity.magnitude);
-            InstanceFinder.ClientManager.Broadcast(message);
+            GrabMessage message = new(grabbable.GetNetworkIdentity(), hand.PhysicsHandCollider.attachedRigidbody.linearVelocity.magnitude);
+            NetworkClient.Send(message);
         }
 
         /// <summary>
         /// This is a grab message from the server received by the client
         /// </summary>
-        public virtual void ReceivedGrabMessage(NetworkConnection connectionId, GrabMessage message, Channel channel = Channel.Reliable)
+        public virtual void ReceivedGrabMessage(NetworkConnectionToClient connectionId, GrabMessage message)
         {
             if (message.HandVelocity > MAXVELOCITY)
             {
-                var grabbable = ActiveGrabbables[message.GrabbableIndex];
-                GiveGrabbableAuthority(connectionId, grabbable);
+                GiveGrabbableAuthority(connectionId, message.GrabbableId);
             }
         }
 
-        public virtual void GiveGrabbableAuthority(NetworkConnection connectionId, Grabbable grabbable) {
-            grabbable.GetComponentInParent<NetworkObject>().GiveOwnership(connectionId);
+        public virtual void GiveGrabbableAuthority(NetworkConnectionToClient connectionId, NetworkIdentity identity) {
+            if (identity.connectionToClient != null) identity.RemoveClientAuthority();
+            identity.AssignClientAuthority(connectionId);
         }
     }
 }

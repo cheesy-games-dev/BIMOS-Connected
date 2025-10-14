@@ -1,17 +1,17 @@
 using System;
-using FishNet.Broadcast;
+using Mirror;
 using UnityEngine;
 
 namespace KadenZombie8.BIMOS
 {
-    public struct GrabMessage : IBroadcast
+    public struct GrabMessage : NetworkMessage
     {
-        public int GrabbableIndex;
+        public NetworkIdentity GrabbableId;
         public float HandVelocity;
 
-        public GrabMessage(int grabbableIndex, float handVelocity)
+        public GrabMessage(NetworkIdentity grabbableId, float handVelocity)
         {
-            GrabbableIndex = grabbableIndex;
+            GrabbableId = grabbableId;
             HandVelocity = handVelocity;
         }
     }

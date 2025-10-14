@@ -1,8 +1,9 @@
 using UnityEngine;
 using HarmonyLib;
 using KadenZombie8.BIMOS.Rig;
-using FishNet.Object;
-using FishNet.Component.Transforming;
+using Mirror;
+using KadenZombie8.BIMOS.Networking;
+using System;
 
 namespace KadenZombie8.BIMOS
 {
@@ -13,9 +14,11 @@ namespace KadenZombie8.BIMOS
         [HarmonyPrefix]
         public static void OnAwakePrefix(BIMOSRig __instance)
         {
-            NetworkObject networkObject = __instance.GetComponentInParent<NetworkObject>();
+            int layer = LayerMask.GetMask("Player", "Rig", "BIMOSRig", "BIPEDRig");
+            Physics.IgnoreLayerCollision(layer, layer, true);
+            NetworkIdentity networkObject = __instance.GetNetworkIdentity();
             if (!networkObject) return;
-            if (!networkObject.IsOwner) return;
+            if (!networkObject.IsOwner()) return;
             MonoBehaviour.Destroy(__instance.ControllerRig);
             MonoBehaviour.Destroy(__instance.GetComponentInChildren<SettingsMenu>().gameObject);
             foreach (var camera in __instance.GetComponentsInChildren<Camera>()) MonoBehaviour.Destroy(camera);
@@ -23,7 +26,7 @@ namespace KadenZombie8.BIMOS
 
         public static void ConvertToNetworkRig(BIMOSRig rig)
         {
-            if (!rig.GetComponent<NetworkObject>()) rig.gameObject.AddComponent<NetworkObject>();
+            if (!rig.GetNetworkIdentity()) rig.gameObject.AddComponent<NetworkIdentity>();
             if (rig.PhysicsRig)
             {
                 var aRig = rig.PhysicsRig.Rigidbodies;
@@ -35,7 +38,7 @@ namespace KadenZombie8.BIMOS
                     aRig.Head.transform,
                     aRig.Pelvis.transform,
                 };
-                AddNetworkTransform(transforms);
+                AddNetworkTransform<NetworkRigidbodyUnreliable>(transforms);
             }
             if (rig.ControllerRig)
             {
@@ -45,15 +48,16 @@ namespace KadenZombie8.BIMOS
                     aRig.RightController,
                     aRig.Camera,
                 };
-                AddNetworkTransform(transforms);
+                AddNetworkTransform<NetworkTransformUnreliable>(transforms);
             }
         }
 
-        public static void AddNetworkTransform(Transform[] transforms)
+        public static void AddNetworkTransform<T>(Transform[] transforms) where T : NetworkTransformBase
         {
+            Type type = typeof(T);
             foreach (var transform in transforms)
             {
-                if (!transform.GetComponent<NetworkTransform>()) transform.gameObject.AddComponent<NetworkTransform>();
+                if (!transform.GetComponent(type)) transform.gameObject.AddComponent(type);
             }
         }
     }
