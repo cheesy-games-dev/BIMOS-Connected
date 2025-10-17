@@ -1,11 +1,11 @@
+using Mirror;
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace KadenZombie8.BIMOS
 {
-    public partial class BIMOSNetworkManager : MonoBehaviour
-    {
+    public partial class BIMOSNetworkManager : NetworkManager {
         public static Action<BIMOSNetworkManager, Scene, LoadSceneMode> OnLevelLoaded;
         public static Action<BIMOSNetworkManager, Scene> OnLevelUnloaded;
         private void AddListeners()

@@ -13,11 +13,6 @@ public class CustomEditorForRig
         {
             base.OnInspectorGUI();
             var rig = (BIMOSRig)target;
-            if (GUILayout.Button("Convert To Networked Rig"))
-            {
-                BIMOSRigPatch.ConvertToNetworkRig(rig);
-                EditorUtility.SetDirty(rig.gameObject);
-            }
         }
     }
 }

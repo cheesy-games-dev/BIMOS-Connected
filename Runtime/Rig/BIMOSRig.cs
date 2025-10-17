@@ -6,7 +6,7 @@ namespace KadenZombie8.BIMOS.Rig
     [DefaultExecutionOrder(-1)]
     public class BIMOSRig : MonoBehaviour
     {
-        public static BIMOSRig Instance { get; private set; }
+        public static BIMOSRig Instance { get; set; }
 
         public ControllerRig ControllerRig;
         public PhysicsRig PhysicsRig;
@@ -16,10 +16,13 @@ namespace KadenZombie8.BIMOS.Rig
         {
             if (Instance != null && Instance != this)
             {
-                Destroy(gameObject);
                 return;
             }
             Instance = this;
+        }
+
+        private void Start() {
+            
         }
     }
 }

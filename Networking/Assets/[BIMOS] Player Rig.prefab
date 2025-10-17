@@ -2279,7 +2279,7 @@ GameObject:
   - component: {fileID: 2694021587767092372}
   - component: {fileID: 885622543067193119}
   - component: {fileID: 105042008559700056}
-  - component: {fileID: 915747090299760581}
+  - component: {fileID: 196902310683945098}
   m_Layer: 6
   m_Name: Head
   m_TagString: Player
@@ -2447,7 +2447,7 @@ MonoBehaviour:
   _pelvis: {fileID: 8556203494894390205}
   _headJoint: {fileID: 885622543067193119}
   _headCameraOffset: {fileID: 2083655086568588637}
---- !u!114 &915747090299760581
+--- !u!114 &196902310683945098
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3623,7 +3623,7 @@ GameObject:
   - component: {fileID: 5715720381970918571}
   - component: {fileID: 8465649426909595903}
   - component: {fileID: 6803593838520956062}
-  - component: {fileID: 4042202602398411871}
+  - component: {fileID: 2662340708843407049}
   m_Layer: 6
   m_Name: LocomotionSphere
   m_TagString: Player
@@ -3732,7 +3732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf8a9845661814409db94e5037d80a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4042202602398411871
+--- !u!114 &2662340708843407049
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5652,7 +5652,7 @@ GameObject:
   - component: {fileID: 2771187932956860478}
   - component: {fileID: 6671873013947755651}
   - component: {fileID: 2379824094042918529}
-  - component: {fileID: 647438472550966800}
+  - component: {fileID: 1175924431160276830}
   m_Layer: 6
   m_Name: '[BIMOS] Player Rig'
   m_TagString: Player
@@ -5709,7 +5709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterModel: {fileID: 919132149155446097, guid: aa29b7cfa6caf0947a02a4f832845b56, type: 3}
---- !u!114 &647438472550966800
+--- !u!114 &1175924431160276830
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6188,7 +6188,7 @@ GameObject:
   - component: {fileID: 3685421060059991317}
   - component: {fileID: 5345365301431071427}
   - component: {fileID: 6590687736849649494}
-  - component: {fileID: 2018097194362583286}
+  - component: {fileID: 8522777243797494661}
   m_Layer: 6
   m_Name: RightHand
   m_TagString: Player
@@ -6510,7 +6510,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _grabSound: {fileID: 6418180475301049370, guid: 3d3b23d0498171a4a843c4c9db653b2f, type: 2}
   _releaseSound: {fileID: 6418180475301049370, guid: 12e38a6b1db7164458ee893ebce788ac, type: 2}
---- !u!114 &2018097194362583286
+--- !u!114 &8522777243797494661
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7179,7 +7179,7 @@ GameObject:
   - component: {fileID: 2531710907283994335}
   - component: {fileID: 5870694611115305941}
   - component: {fileID: 5423963894524361077}
-  - component: {fileID: 3510459866467168406}
+  - component: {fileID: 1353048061947895672}
   m_Layer: 6
   m_Name: LeftHand
   m_TagString: Player
@@ -7501,7 +7501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _grabSound: {fileID: 6418180475301049370, guid: 3d3b23d0498171a4a843c4c9db653b2f, type: 2}
   _releaseSound: {fileID: 6418180475301049370, guid: 12e38a6b1db7164458ee893ebce788ac, type: 2}
---- !u!114 &3510459866467168406
+--- !u!114 &1353048061947895672
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7994,7 +7994,7 @@ GameObject:
   - component: {fileID: 8556203494894390205}
   - component: {fileID: 3294666784809313299}
   - component: {fileID: 4187641605383468551}
-  - component: {fileID: 6220149892286777566}
+  - component: {fileID: 4247592715901466763}
   m_Layer: 6
   m_Name: Pelvis
   m_TagString: Player
@@ -8147,7 +8147,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &6220149892286777566
+--- !u!114 &4247592715901466763
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8782,7 +8782,7 @@ GameObject:
   - component: {fileID: 8025579406049291928}
   - component: {fileID: 4107036072679230787}
   - component: {fileID: 2622799556790702774}
-  - component: {fileID: 2054600447573502872}
+  - component: {fileID: 8340273640825579040}
   m_Layer: 6
   m_Name: Knee
   m_TagString: Player
@@ -8934,7 +8934,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &2054600447573502872
+--- !u!114 &8340273640825579040
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9412,7 +9412,6 @@ GameObject:
   - component: {fileID: 4322997551656818365}
   - component: {fileID: 4166488413971264423}
   - component: {fileID: 7113746170793521632}
-  - component: {fileID: 766898943868036541}
   m_Layer: 6
   m_Name: RightController
   m_TagString: Untagged
@@ -9574,40 +9573,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hand: {fileID: 1714243675603914674}
---- !u!114 &766898943868036541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5081465939377218559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a553cb17010b2403e8523b558bffbc14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Mirror.Components::Mirror.NetworkTransformUnreliable
-  syncDirection: 1
-  syncMode: 0
-  syncInterval: 0
-  target: {fileID: 1478771343154856604}
-  syncPosition: 1
-  syncRotation: 1
-  syncScale: 0
-  onlySyncOnChange: 1
-  compressRotation: 1
-  interpolatePosition: 1
-  interpolateRotation: 1
-  interpolateScale: 1
-  coordinateSpace: 0
-  timelineOffset: 1
-  showGizmos: 0
-  showOverlay: 0
-  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
-  bufferResetMultiplier: 3
-  useFixedUpdate: 0
-  positionSensitivity: 0.01
-  rotationSensitivity: 0.01
-  scaleSensitivity: 0.01
 --- !u!1 &5090928283351871714
 GameObject:
   m_ObjectHideFlags: 0
@@ -9793,7 +9758,6 @@ GameObject:
   - component: {fileID: 6596823750539270308}
   - component: {fileID: 2670558484249623212}
   - component: {fileID: 1804380787358158521}
-  - component: {fileID: 7232047995559537960}
   m_Layer: 6
   m_Name: LeftController
   m_TagString: Untagged
@@ -9955,40 +9919,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hand: {fileID: 1354081709754906145}
---- !u!114 &7232047995559537960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5238918533599247444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a553cb17010b2403e8523b558bffbc14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Mirror.Components::Mirror.NetworkTransformUnreliable
-  syncDirection: 1
-  syncMode: 0
-  syncInterval: 0
-  target: {fileID: 6592363549466593726}
-  syncPosition: 1
-  syncRotation: 1
-  syncScale: 0
-  onlySyncOnChange: 1
-  compressRotation: 1
-  interpolatePosition: 1
-  interpolateRotation: 1
-  interpolateScale: 1
-  coordinateSpace: 0
-  timelineOffset: 1
-  showGizmos: 0
-  showOverlay: 0
-  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
-  bufferResetMultiplier: 3
-  useFixedUpdate: 0
-  positionSensitivity: 0.01
-  rotationSensitivity: 0.01
-  scaleSensitivity: 0.01
 --- !u!1 &5345778062740284635
 GameObject:
   m_ObjectHideFlags: 0
@@ -15484,7 +15414,6 @@ GameObject:
   - component: {fileID: 1589075531346667609}
   - component: {fileID: 3417335110542205716}
   - component: {fileID: 6153071560714915280}
-  - component: {fileID: 6655586939649269744}
   m_Layer: 6
   m_Name: Camera
   m_TagString: MainCamera
@@ -15699,40 +15628,6 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
---- !u!114 &6655586939649269744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8775899912690175651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a553cb17010b2403e8523b558bffbc14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Mirror.Components::Mirror.NetworkTransformUnreliable
-  syncDirection: 1
-  syncMode: 0
-  syncInterval: 0
-  target: {fileID: 7935699982236817345}
-  syncPosition: 1
-  syncRotation: 1
-  syncScale: 0
-  onlySyncOnChange: 1
-  compressRotation: 1
-  interpolatePosition: 1
-  interpolateRotation: 1
-  interpolateScale: 1
-  coordinateSpace: 0
-  timelineOffset: 1
-  showGizmos: 0
-  showOverlay: 0
-  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
-  bufferResetMultiplier: 3
-  useFixedUpdate: 0
-  positionSensitivity: 0.01
-  rotationSensitivity: 0.01
-  scaleSensitivity: 0.01
 --- !u!1 &8808830143509753527
 GameObject:
   m_ObjectHideFlags: 0
