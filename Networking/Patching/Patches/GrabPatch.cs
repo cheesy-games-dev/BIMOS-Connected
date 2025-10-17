@@ -14,7 +14,6 @@ namespace KadenZombie8.BIMOS
             var rb = __instance.Collider.attachedRigidbody;
             if (!rb) return;
             if (rb.isKinematic) return;
-            GrabbableManager.Instance.SendGrabMessage(__instance, hand);
         }
     }
 }

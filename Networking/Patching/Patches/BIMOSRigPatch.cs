@@ -1,26 +1,25 @@
 using UnityEngine;
 using HarmonyLib;
 using KadenZombie8.BIMOS.Rig;
-using Mirror;
 using KadenZombie8.BIMOS.Networking;
+using UnityEngine.EventSystems;
 
 namespace KadenZombie8.BIMOS
 {
     [HarmonyPatch(typeof(BIMOSRig))]
     public static class BIMOSRigPatch
     {
-        [HarmonyPatch("Start")]
+        [HarmonyPatch("Awake")]
         [HarmonyPrefix]
-        public static void OnStartPrefix(BIMOSRig __instance)
+        public static void OnAwakePrefix(BIMOSRig __instance)
         {
             int layer = LayerMask.GetMask("Player", "Rig", "BIMOSRig", "BIPEDRig");
             Physics.IgnoreLayerCollision(layer, layer, true);
-            NetworkIdentity networkObject = __instance.GetNetworkIdentity();
-            if (networkObject.isLocalPlayer) {
-                BIMOSRig.Instance = __instance;
+            if (BIMOSRig.Instance != null) {
+
             }
             else {
-                Object.Destroy(__instance.ControllerRig);
+                Object.Destroy(__instance.GetComponentInChildren<EventSystem>().gameObject);
                 Object.Destroy(__instance.GetComponentInChildren<SettingsMenu>().gameObject);
                 foreach (var camera in __instance.GetComponentsInChildren<Camera>())
                     Object.Destroy(camera);
