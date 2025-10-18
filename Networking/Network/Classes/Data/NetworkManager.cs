@@ -24,19 +24,15 @@ namespace KadenZombie8.BIMOS.Networking
         }
 
         public virtual void CreateServer(bool hostMode) {
-            LayerProcessorT<IServer, IClient>.singleton.Listen(hostMode);
+            LayerProcessor.singleton.Listen(hostMode);
         }
 
         public virtual void JoinServer(string address) {
-            LayerProcessorT<IServer, IClient>.singleton.Connect(address);
+            LayerProcessor.singleton.Connect(address);
         }
 
-        public virtual void ServerChangeScene(bool hostMode) {
-            SceneProcessor<object>.singleton.LoadSceneAsync(hostMode);
-        }
-
-        public virtual void JoinServer(string address) {
-            LayerProcessorT<IServer, IClient>.singleton.Connect(address);
+        public virtual void ServerChangeScene(SceneReference reference) {
+            SceneProcessor.singleton.LoadSceneAsync(reference);
         }
     }
 }

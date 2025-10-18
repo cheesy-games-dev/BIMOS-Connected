@@ -16,6 +16,6 @@ namespace KadenZombie8.BIMOS.Networking
 
     public abstract class PrefabProcessorT<T> : PrefabProcessor where T : PrefabReference {
         public List<NetworkBarcodeT<T>> PrefabList = new();
-        public List<T> SpawnedPrefabs = new();
+        public List<GameObject> SpawnedPrefabs = new();
     }
 }

@@ -3,22 +3,22 @@ using UnityEngine.SceneManagement;
 
 namespace KadenZombie8.BIMOS.Networking
 {
-    public class SceneManangerProcessor : SceneProcessor
+    public class SceneManangerProcessor : SceneProcessorT<SceneAsset>
     {
         public new static SceneManangerProcessor singleton;
         public override void InitSingleton() {
             singleton = this;
         }
 
-        public override async void LoadSceneAsync(NetworkBarcodeT<SceneReference> scene) {
-            var netbar = SceneList.Find(x => scene.barcode == x.barcode);
+        public override async void LoadSceneAsync(SceneAsset scene) {
+            var netbar = SceneList.Find(x => scene == x.reference);
             var reference = netbar.reference;
             LoadedScenes.Add(reference);
-            await SceneManager.LoadSceneAsync(reference.SceneKey, reference.LoadSceneMode);
+            await SceneManager.LoadSceneAsync(reference.name, reference.);
             OnSceneLoaded?.Invoke(reference);
         }
 
-        public override void UnloadSceneAsync(NetworkBarcodeT<SceneReferenceT<SceneAsset>> scene) {
+        public override void UnloadSceneAsync(SceneAsset scene) {
             var netbar = SceneList.Find(x => scene.barcode == x.barcode);
             var reference = netbar.reference;
             LoadedScenes.Remove(netbar);

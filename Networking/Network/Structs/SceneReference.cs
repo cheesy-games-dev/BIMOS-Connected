@@ -21,4 +21,10 @@ namespace KadenZombie8.BIMOS.Networking
             set => sceneKey = (T)value;
         }
     }
+
+    /// <summary>
+    /// This tricks unity into making this Object component only contain scenes
+    /// </summary>
+    public class SceneAsset : UnityEngine.Object {
+    }
 }

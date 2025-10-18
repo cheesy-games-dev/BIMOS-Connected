@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace KadenZombie8.BIMOS.Networking
 {
-    public class PrefabGameObjectProcessor : PrefabProcessorT<GameObject> {
+    public class PrefabGameObjectProcessor : PrefabProcessorT<PrefabReferenceT<GameObject>> {
         public new static PrefabGameObjectProcessor singleton;
 
         public override void InitSingleton() {
