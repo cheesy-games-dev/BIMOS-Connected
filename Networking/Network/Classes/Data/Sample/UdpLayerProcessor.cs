@@ -3,19 +3,42 @@ using UnityEngine;
 
 namespace KadenZombie8.BIMOS.Networking
 {
-    public class UdpLayerProcessor : LayerProcessor
+    public class UdpLayerProcessor : LayerProcessorT<UdpServer, UdpClient>
     {
         public ushort Port = 7777;
-        public override void CreateServer(bool host) {
-            ServerTransport = new UdpServer();
-            Server.ChangeTransport(ServerTransport);
+        public override void Listen(bool connectLocally) {
             Server.Start(Port, MaxClients);
+            if (connectLocally)
+                Connect("localhost");
         }
 
-        public override void JoinServer(string code) {
-            ClientTransport = new UdpClient();
-            Client.ChangeTransport(ClientTransport);
-            Client.Connect(code, MaxConnectionAttempts);
+        public new static UdpLayerProcessor singleton;
+        public override void InitSingleton() {
+            singleton = this;
+        }
+
+        public override void Connect(string address) {
+            Client.Connect(address, MaxConnectionAttempts);
+        }
+
+        public override void SetupTransport(ref UdpServer layerServer, ref UdpClient layerClient) {
+            layerServer = new();
+            Server?.ChangeTransport(layerServer);
+            layerClient = new();
+            Client?.ChangeTransport(layerClient);
+        }
+
+        public override void Disconnect() {
+            Client?.Disconnect();
+        }
+
+        public override void Unlisten() {
+            Server?.Stop();
+        }
+
+        public override void Shutdown() {
+            Disconnect();
+            Unlisten();
         }
     }
 }

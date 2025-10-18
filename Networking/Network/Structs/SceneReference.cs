@@ -1,20 +1,24 @@
 using System;
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace KadenZombie8.BIMOS.Networking
 {
     [Serializable]
-    public struct SceneReference
+    public abstract class SceneReference
     {
-        public object SceneKey {
+        public abstract object SceneKey {
             get;set;
         }
-        public LoadSceneMode LoadSceneMode { get; set; }
-        public SceneAsset SceneAsset;
+        public LoadSceneMode LoadSceneMode;
     }
 
-    public class SceneAsset : UnityEngine.Object {
-        
+    [Serializable]
+    public class SceneReferenceT<T> : SceneReference {
+        public T sceneKey;
+
+        public override object SceneKey {
+            get => sceneKey;
+            set => sceneKey = (T)value;
+        }
     }
 }

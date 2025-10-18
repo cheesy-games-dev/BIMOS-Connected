@@ -307,6 +307,7 @@ GameObject:
   - component: {fileID: 1407779229}
   - component: {fileID: 1407779228}
   - component: {fileID: 1407779227}
+  - component: {fileID: 1407779230}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -341,6 +342,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c22c37f50966aea458419c1521657dc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: bimos.networking::KadenZombie8.BIMOS.Networking.SceneManangerProcessor
+  OnSceneLoaded:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSceneUnloaded:
+    m_PersistentCalls:
+      m_Calls: []
+  SceneList: []
   LoadedScenes: []
 --- !u!114 &1407779228
 MonoBehaviour:
@@ -372,9 +380,21 @@ MonoBehaviour:
   RigPrefab:
     barcode: 
     reference: {fileID: 0}
-  SceneList: []
-  PrefabList: []
   ServerCode: 
+--- !u!114 &1407779230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407779225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b98b8597204fd54080af7a3ec4cf96a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: bimos.networking::KadenZombie8.BIMOS.Networking.PrefabGameObjectProcessor
+  PrefabList: []
+  SpawnedPrefabs: []
 --- !u!1 &1847321591
 GameObject:
   m_ObjectHideFlags: 0
