@@ -160,9 +160,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FishNet.Runtime::FishNet.Component.Transforming.NetworkTransform
-  _componentIndexCache: 255
+  _componentIndexCache: 3
   _addedNetworkObject: {fileID: 8053179914245590778}
-  _networkObjectCache: {fileID: 0}
+  _networkObjectCache: {fileID: 8053179914245590778}
   _componentConfiguration: 2
   _synchronizeParent: 0
   _packing:
@@ -211,9 +211,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FishNet.Runtime::FishNet.Component.Transforming.NetworkTransform
-  _componentIndexCache: 255
+  _componentIndexCache: 0
   _addedNetworkObject: {fileID: 8053179914245590778}
-  _networkObjectCache: {fileID: 0}
+  _networkObjectCache: {fileID: 8053179914245590778}
   _componentConfiguration: 2
   _synchronizeParent: 0
   _packing:
@@ -268,7 +268,16 @@ MonoBehaviour:
   <ComponentIndex>k__BackingField: 0
   <PredictedSpawn>k__BackingField: {fileID: 0}
   <PredictedOwner>k__BackingField: {fileID: 0}
-  NetworkBehaviours: []
+  NetworkBehaviours:
+  - {fileID: 2343925727143516882}
+  - {fileID: 2814676859039952047}
+  - {fileID: 6839603677913741579}
+  - {fileID: 8122298922199292602}
+  - {fileID: 498945752350422515}
+  - {fileID: 1918187953211892708}
+  - {fileID: 7838989981433488437}
+  - {fileID: 2530261478575592883}
+  - {fileID: 4747094015670907571}
   InitializedParentNetworkBehaviour: {fileID: 0}
   InitializedNestedNetworkObjects: []
   RuntimeParentNetworkBehaviour: {fileID: 0}
@@ -293,15 +302,15 @@ MonoBehaviour:
   _spectatorInterpolation: 2
   _enableTeleport: 0
   _teleportThreshold: 1
-  <PrefabId>k__BackingField: 65535
+  <PrefabId>k__BackingField: 3
   <SpawnableCollectionId>k__BackingField: 0
-  <AssetPathHash>k__BackingField: 7151585334748569700
+  <AssetPathHash>k__BackingField: 14730983086248529334
   <SceneId>k__BackingField: 0
   SerializedTransformProperties:
     Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    Scale: {x: 0, y: 0, z: 0}
-    IsValid: 0
+    Rotation: {x: 0, y: 0, z: 0, w: 1}
+    Scale: {x: 1, y: 1, z: 1}
+    IsValid: 1
 --- !u!1 &3349607528184284733 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3301374950904824340, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
@@ -319,9 +328,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FishNet.Runtime::FishNet.Component.Transforming.NetworkTransform
-  _componentIndexCache: 255
+  _componentIndexCache: 5
   _addedNetworkObject: {fileID: 8053179914245590778}
-  _networkObjectCache: {fileID: 0}
+  _networkObjectCache: {fileID: 8053179914245590778}
   _componentConfiguration: 2
   _synchronizeParent: 0
   _packing:
@@ -370,9 +379,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FishNet.Runtime::FishNet.Component.Transforming.NetworkTransform
-  _componentIndexCache: 255
+  _componentIndexCache: 4
   _addedNetworkObject: {fileID: 8053179914245590778}
-  _networkObjectCache: {fileID: 0}
+  _networkObjectCache: {fileID: 8053179914245590778}
   _componentConfiguration: 2
   _synchronizeParent: 0
   _packing:
@@ -421,9 +430,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FishNet.Runtime::FishNet.Component.Transforming.NetworkTransform
-  _componentIndexCache: 255
+  _componentIndexCache: 2
   _addedNetworkObject: {fileID: 8053179914245590778}
-  _networkObjectCache: {fileID: 0}
+  _networkObjectCache: {fileID: 8053179914245590778}
   _componentConfiguration: 2
   _synchronizeParent: 0
   _packing:
@@ -472,9 +481,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FishNet.Runtime::FishNet.Component.Transforming.NetworkTransform
-  _componentIndexCache: 255
+  _componentIndexCache: 1
   _addedNetworkObject: {fileID: 8053179914245590778}
-  _networkObjectCache: {fileID: 0}
+  _networkObjectCache: {fileID: 8053179914245590778}
   _componentConfiguration: 2
   _synchronizeParent: 0
   _packing:
@@ -523,9 +532,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FishNet.Runtime::FishNet.Component.Transforming.NetworkTransform
-  _componentIndexCache: 255
+  _componentIndexCache: 8
   _addedNetworkObject: {fileID: 8053179914245590778}
-  _networkObjectCache: {fileID: 0}
+  _networkObjectCache: {fileID: 8053179914245590778}
   _componentConfiguration: 0
   _synchronizeParent: 0
   _packing:
@@ -574,9 +583,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FishNet.Runtime::FishNet.Component.Transforming.NetworkTransform
-  _componentIndexCache: 255
+  _componentIndexCache: 7
   _addedNetworkObject: {fileID: 8053179914245590778}
-  _networkObjectCache: {fileID: 0}
+  _networkObjectCache: {fileID: 8053179914245590778}
   _componentConfiguration: 0
   _synchronizeParent: 0
   _packing:
@@ -625,9 +634,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: FishNet.Runtime::FishNet.Component.Transforming.NetworkTransform
-  _componentIndexCache: 255
+  _componentIndexCache: 6
   _addedNetworkObject: {fileID: 8053179914245590778}
-  _networkObjectCache: {fileID: 0}
+  _networkObjectCache: {fileID: 8053179914245590778}
   _componentConfiguration: 0
   _synchronizeParent: 0
   _packing:

@@ -1,7 +1,6 @@
 using FishNet;
-using FishNet.Component.Spawning;
 using FishNet.Connection;
-using FishNet.Managing;
+using KadenZombie8.BIMOS.Networking;
 using System;
 using UnityEngine;
 
@@ -49,8 +48,8 @@ namespace KadenZombie8.BIMOS.Rig.Spawning
 
         private void SceneManager_OnClientLoadedStartScenes(NetworkConnection arg1, bool arg2) {
             var rigInstance = Instantiate(RigPrefab);
+            InstanceFinder.ServerManager.Spawn(rigInstance.GetNetworkObject(), arg1);
             TeleportToSpawnPoint(CurrentSpawnPoint.transform, rigInstance);
-            InstanceFinder.ServerManager.Spawn(rigInstance.gameObject, arg1);
         }
 
         private void Start() => Respawn();

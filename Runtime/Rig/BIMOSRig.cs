@@ -12,16 +12,7 @@ namespace KadenZombie8.BIMOS.Rig
         public PhysicsRig PhysicsRig;
         public AnimationRig AnimationRig;
 
-        private void Awake()
-        {
-            if (Instance != null && Instance != this)
-            {
-                return;
-            }
-            Instance = this;
-        }
-
-        private void Start() {
+        private void Awake() {
         }
     }
 }

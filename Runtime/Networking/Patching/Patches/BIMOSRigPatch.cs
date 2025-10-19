@@ -9,13 +9,14 @@ namespace KadenZombie8.BIMOS
     [HarmonyPatch(typeof(BIMOSRig))]
     public static class BIMOSRigPatch
     {
-        [HarmonyPatch("Start")]
+        [HarmonyPatch("Awake")]
         [HarmonyPrefix]
-        public static void StartPrefix(BIMOSRig __instance)
+        public static bool Prefix(BIMOSRig __instance)
         {
             int layer = LayerMask.GetMask("Player", "Rig", "BIMOSRig", "BIPEDRig");
             Physics.IgnoreLayerCollision(layer, layer, true);
             if (__instance.GetNetworkObject().IsOwner) {
+                BIMOSRig.Instance = __instance;
                 BIMOSLogger.Log($"{__instance.name} is Local Rig");
             }
             else {
