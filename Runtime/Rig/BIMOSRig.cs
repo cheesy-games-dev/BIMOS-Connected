@@ -20,5 +20,8 @@ namespace KadenZombie8.BIMOS.Rig
             }
             Instance = this;
         }
+
+        private void Start() {
+        }
     }
 }

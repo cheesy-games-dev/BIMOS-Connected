@@ -1,3 +1,7 @@
+using FishNet;
+using FishNet.Component.Spawning;
+using FishNet.Connection;
+using FishNet.Managing;
 using System;
 using UnityEngine;
 
@@ -9,12 +13,11 @@ namespace KadenZombie8.BIMOS.Rig.Spawning
     public class SpawnPointManager : MonoBehaviour
     {
         public static SpawnPointManager Instance { get; private set; }
-
         public event Action OnRespawn;
 
-        public SpawnPoint SpawnPoint;
+        public BIMOSRig RigPrefab;
 
-        private BIMOSRig _player;
+        public SpawnPoint CurrentSpawnPoint;
 
         private void Awake()
         {
@@ -25,12 +28,10 @@ namespace KadenZombie8.BIMOS.Rig.Spawning
             }
             Instance = this;
 
-            _player = BIMOSRig.Instance;
-
-            if (!SpawnPoint)
+            if (!CurrentSpawnPoint)
             {
-                SpawnPoint = FindFirstObjectByType<SpawnPoint>();
-                if (!SpawnPoint)
+                CurrentSpawnPoint = FindFirstObjectByType<SpawnPoint>();
+                if (!CurrentSpawnPoint)
                 {
                     Debug.LogError("You must have at least one spawn point!");
                     return;
@@ -38,26 +39,39 @@ namespace KadenZombie8.BIMOS.Rig.Spawning
             }
         }
 
+        private void OnEnable() {
+            InstanceFinder.SceneManager.OnClientLoadedStartScenes += SceneManager_OnClientLoadedStartScenes;
+        }
+
+        private void OnDisable() {
+            InstanceFinder.SceneManager.OnClientLoadedStartScenes -= SceneManager_OnClientLoadedStartScenes;
+        }
+
+        private void SceneManager_OnClientLoadedStartScenes(NetworkConnection arg1, bool arg2) {
+            var rigInstance = Instantiate(RigPrefab);
+            TeleportToSpawnPoint(CurrentSpawnPoint.transform, rigInstance);
+            InstanceFinder.ServerManager.Spawn(rigInstance.gameObject, arg1);
+        }
+
         private void Start() => Respawn();
 
-        public void SetSpawnPoint(SpawnPoint spawnPoint) => SpawnPoint = spawnPoint;
+        public void SetSpawnPoint(SpawnPoint spawnPoint) => CurrentSpawnPoint = spawnPoint;
 
         public void Respawn()
         {
-            TeleportToSpawnPoint(SpawnPoint.transform);
+            TeleportToSpawnPoint(CurrentSpawnPoint.transform);
 
             OnRespawn?.Invoke();
         }
 
-        private void TeleportToSpawnPoint(Transform spawnPoint)
-        {
-            _player.PhysicsRig.GrabHandlers.Left.AttemptRelease();
-            _player.PhysicsRig.GrabHandlers.Right.AttemptRelease();
+        private void TeleportToSpawnPoint(Transform spawnPoint, BIMOSRig rig = null) {
+            rig ??= BIMOSRig.Instance;
+            rig.PhysicsRig.GrabHandlers.Left.AttemptRelease();
+            rig.PhysicsRig.GrabHandlers.Right.AttemptRelease();
 
             var rigidbodies = transform.GetComponentsInChildren<Rigidbody>();
-            var rootPosition = _player.PhysicsRig.Rigidbodies.LocomotionSphere.position;
-            foreach (var rigidbody in rigidbodies)
-            {
+            var rootPosition = rig.PhysicsRig.Rigidbodies.LocomotionSphere.position;
+            foreach (var rigidbody in rigidbodies) {
                 var offset = rigidbody.position - rootPosition; //Calculates the offset between the locoball and the rigidbody
                 rigidbody.position = spawnPoint.position + offset; //Sets the rigidbody's position
                 rigidbody.transform.position = spawnPoint.position + offset; //Sets the transform's position
@@ -70,12 +84,12 @@ namespace KadenZombie8.BIMOS.Rig.Spawning
             }
 
             //Update the animation rig's position
-            _player.AnimationRig.Transforms.Hips.position += spawnPoint.position - rootPosition;
+            rig.AnimationRig.Transforms.Hips.position += spawnPoint.position - rootPosition;
 
             //Move the player's animated feet to the new position
-            _player.AnimationRig.Feet.TeleportFeet();
+            rig.AnimationRig.Feet.TeleportFeet();
 
-            _player.ControllerRig.transform.rotation = transform.rotation;
+            rig.ControllerRig.transform.rotation = transform.rotation;
         }
     }
 }
