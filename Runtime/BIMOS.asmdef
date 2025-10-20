@@ -6,13 +6,15 @@
         "GUID:7f7d1af65c2641843945d409d28f2e20",
         "GUID:e40ba710768534012815d3193fa296cb",
         "GUID:4847341ff46394e83bb78fbd0652937e",
-        "GUID:7c88a4a7926ee5145ad2dfa06f454c67"
+        "GUID:30817c1a0e6d646d99c048fc403f5979"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
-    "precompiledReferences": [],
+    "precompiledReferences": [
+        "0Harmony.dll"
+    ],
     "autoReferenced": true,
     "defineConstraints": [],
     "versionDefines": [],

@@ -1,6 +1,5 @@
-using FishNet;
-using FishNet.Connection;
 using KadenZombie8.BIMOS.Networking;
+using Mirror;
 using System;
 using UnityEngine;
 
@@ -18,43 +17,34 @@ namespace KadenZombie8.BIMOS.Rig.Spawning
 
         public SpawnPoint CurrentSpawnPoint;
 
-        private void Awake()
-        {
-            if (Instance != null && Instance != this)
-            {
+        private void OnEnable() {
+            if (Instance != null && Instance != this) {
                 Destroy(gameObject);
                 return;
             }
-            Instance = this;
-
-            if (!CurrentSpawnPoint)
-            {
+            if (!CurrentSpawnPoint) {
                 CurrentSpawnPoint = FindFirstObjectByType<SpawnPoint>();
-                if (!CurrentSpawnPoint)
-                {
+                if (!CurrentSpawnPoint) {
                     Debug.LogError("You must have at least one spawn point!");
                     return;
                 }
             }
-        }
-
-        private void OnEnable() {
-            InstanceFinder.SceneManager.OnClientLoadedStartScenes += SceneManager_OnClientLoadedStartScenes;
+            Instance = this;
+            NetworkManager.singleton.playerPrefab = RigPrefab.gameObject;
+            NetworkManager.RegisterStartPosition(CurrentSpawnPoint.transform);
         }
 
         private void OnDisable() {
-            InstanceFinder.SceneManager.OnClientLoadedStartScenes -= SceneManager_OnClientLoadedStartScenes;
-        }
-
-        private void SceneManager_OnClientLoadedStartScenes(NetworkConnection arg1, bool arg2) {
-            var rigInstance = Instantiate(RigPrefab);
-            InstanceFinder.ServerManager.Spawn(rigInstance.GetNetworkObject(), arg1);
-            TeleportToSpawnPoint(CurrentSpawnPoint.transform, rigInstance);
+            NetworkManager.UnRegisterStartPosition(CurrentSpawnPoint.transform);
         }
 
         private void Start() => Respawn();
 
-        public void SetSpawnPoint(SpawnPoint spawnPoint) => CurrentSpawnPoint = spawnPoint;
+        public void SetSpawnPoint(SpawnPoint spawnPoint) {
+            NetworkManager.UnRegisterStartPosition(CurrentSpawnPoint.transform);
+            CurrentSpawnPoint = spawnPoint;
+            NetworkManager.RegisterStartPosition(CurrentSpawnPoint.transform);
+        }
 
         public void Respawn()
         {
