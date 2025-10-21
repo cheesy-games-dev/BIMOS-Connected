@@ -1,8 +1,3 @@
-<<<<<<< Updated upstream
-=======
-using KadenZombie8.BIMOS.Networking;
-using Mirror;
->>>>>>> Stashed changes
 using System;
 using System.Collections;
 using UnityEngine;
@@ -78,11 +73,7 @@ namespace KadenZombie8.BIMOS.Rig
         public virtual void Grab(Hand hand) //Triggered when player grabs the grab
         {
             hand.CurrentGrab = this;
-            var identity = this.GetNetworkIdentity();
-            if (identity) {
-                var message = new GrabMessage(identity, this, hand);
-                NetworkClient.Send(message);
-            }
+
             if (hand.IsLeftHand)
                 LeftHand = hand;
             else

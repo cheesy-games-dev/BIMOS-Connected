@@ -6,6 +6,7 @@ namespace KadenZombie8.BIMOS.Rig.Spawning
     /// <summary>
     /// Manages the current spawn point and respawning the player
     /// </summary>
+    [DefaultExecutionOrder(-2)]
     public class SpawnPointManager : MonoBehaviour
     {
         public static SpawnPointManager Instance { get; private set; }
