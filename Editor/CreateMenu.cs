@@ -24,8 +24,8 @@ namespace KadenZombie8.BIMOS.Samples.Editor
                 spawnPointManager = spawnPointManagerInstance.GetComponentInChildren<SpawnPointManager>();
             }
 
-            if (!spawnPointManager.SpawnPoint)
-                spawnPointManager.SpawnPoint = spawnPointInstance.GetComponent<SpawnPoint>();
+            if (!spawnPointManager.CurrentSpawnPoint)
+                spawnPointManager.CurrentSpawnPoint = spawnPointInstance.GetComponent<SpawnPoint>();
 
             GameObjectUtility.SetParentAndAlign(spawnPointInstance, spawnPointManager.gameObject);
         }

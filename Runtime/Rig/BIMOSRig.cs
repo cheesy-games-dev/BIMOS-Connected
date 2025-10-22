@@ -6,20 +6,15 @@ namespace KadenZombie8.BIMOS.Rig
     [DefaultExecutionOrder(-1)]
     public class BIMOSRig : MonoBehaviour
     {
-        public static BIMOSRig Instance { get; private set; }
+        public static BIMOSRig Instance { get; set; }
 
         public ControllerRig ControllerRig;
         public PhysicsRig PhysicsRig;
         public AnimationRig AnimationRig;
 
-        private void Awake()
-        {
-            if (Instance != null && Instance != this)
-            {
-                Destroy(gameObject);
-                return;
-            }
-            Instance = this;
+        private void Awake() {
+            int layer = LayerMask.GetMask("Player", "Rig", "BIMOSRig", "BIPEDRig");
+            Physics.IgnoreLayerCollision(layer, layer, true);
         }
     }
 }
