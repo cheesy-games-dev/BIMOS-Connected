@@ -3,67 +3,57 @@ using Riptide;
 using Riptide.Transports;
 using Riptide.Utils;
 using System;
+using System.Threading;
 using UnityEngine;
 
 namespace KadenZombie8.BIMOS.Networking
 {
-    public partial class Network : MonoBehaviour
-    {
-        private static Network _singleton;
-        public static Network Singleton {
-            get => _singleton;
-            private set {
-                if (_singleton == null)
-                    _singleton = value;
-                else if (_singleton != value) {
-                    Debug.Log($"{nameof(Network)} instance already exists, destroying duplicate!");
-                    Destroy(value);
-                }
-            }
-        }
-
-        public Server Server {
+    public static partial class Network {
+        public static Server Server {
             get; private set;
         }
-        public Client Client {
+        public static Client Client {
             get; private set;
         }
-
-        public ushort MaxClientCount;
-
-        private void Awake() {
-            Singleton = this;
-        }
-
-        private void Start() {
+        private static Thread _riptideThread;
+        static Network() {
             RiptideLogger.Initialize(Debug.Log, Debug.Log, Debug.LogWarning, Debug.LogError, false);
 
             Server = new();
             Client = new();
+            StartThread();
         }
-        public void ChangeTransport(IServer server, IClient client) {
+        internal static void StartThread() {
+            _riptideThread = new Thread(RiptideThread);
+
+            if (_riptideThread.IsAlive)
+                return;
+
+            _riptideThread.IsBackground = true;
+            _riptideThread.Start();
+        }
+        public static void ChangeTransport(IServer server, IClient client) {
             Server?.ChangeTransport(server);
             Client?.ChangeTransport(client);
         }
-        public void StartHost() {
-            Listen();
-            Connect();
+        public static void InitializeHost(ushort maxClients, ushort port) {
+            InitializeServer(maxClients, port);
+            Connect("127.0.0.1", 25000);
         }
-        public void Listen(ushort port = 7777) {
-            Server?.Start(port, MaxClientCount);
+        public static void InitializeServer(ushort maxClients, ushort port) {
+            Server?.Start(port, maxClients);
         }
-        public void Connect(string address = "localhost") {
+        public static void Connect(string address, ushort port) {
             Client?.Connect(address);
         }
-
-        private void FixedUpdate() {
-            Server?.Update();
-            Client?.Update();
+        public static void Disconnect() {
+            Server?.Stop();
+            Client?.Disconnect();
         }
 
-        private void OnApplicationQuit() {
-            Server.Stop();
-            Client?.Disconnect();
+        private static void RiptideThread() {
+            Server?.Update();
+            Client?.Update();
         }
     }
 }

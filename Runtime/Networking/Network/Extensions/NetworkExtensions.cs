@@ -5,6 +5,6 @@ namespace KadenZombie8.BIMOS.Networking
 {
     public static class NetworkExtensions
     {
-        public static bool IsLocal(this Connection connection) => connection == Network.Singleton.Client.Connection;
+        public static bool IsLocal(this Connection connection) => connection == Network.Client.Connection;
     }
 }
