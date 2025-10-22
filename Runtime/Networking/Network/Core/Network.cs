@@ -45,8 +45,15 @@ namespace KadenZombie8.BIMOS.Networking
             Server?.ChangeTransport(server);
             Client?.ChangeTransport(client);
         }
+        public void StartHost() {
+            Listen();
+            Connect();
+        }
         public void Listen(ushort port = 7777) {
             Server?.Start(port, MaxClientCount);
+        }
+        public void Connect(string address = "localhost") {
+            Client?.Connect(address);
         }
 
         private void FixedUpdate() {
