@@ -1973,7 +1973,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1407779226}
-  - component: {fileID: 1407779230}
+  - component: {fileID: 1407779227}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -1996,7 +1996,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1635638286}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1407779230
+--- !u!114 &1407779227
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2005,9 +2005,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1407779225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b2a4be84fcd6d640ab38a95e1056489, type: 3}
+  m_Script: {fileID: 11500000, guid: c770d6859c0ce1648875ae780cd36353, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: kadenzombie8.bimos::KadenZombie8.BIMOS.Networking.BIMOSNetworkManager
+  m_EditorClassIdentifier: kadenzombie8.bimos.networking::KadenZombie8.BIMOS.Networking.NetworkGUI
 --- !u!1 &1417759004
 GameObject:
   m_ObjectHideFlags: 0
