@@ -1,8 +1,7 @@
 using Riptide;
 using UnityEngine;
 
-namespace KadenZombie8.BIMOS.Networking
-{
+namespace HL.Networking {
     public static class NetworkExtensions
     {
         public static bool IsLocal(this Connection connection) => connection == Network.Client.Connection;

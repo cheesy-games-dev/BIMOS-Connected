@@ -1,23 +1,37 @@
 using Riptide;
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
-namespace KadenZombie8.BIMOS.Networking
-{
+namespace HL.Networking {
     public class NetworkView : MonoBehaviour
     {
         public static Dictionary<ushort, NetworkView> Views = new Dictionary<ushort, NetworkView>();
 
-        public ushort Id {
-            get; private set;
-        }
+        public ushort Id;
 
-        public Connection Owner {
-            get; private set;
-        }
+        public Connection Owner;
 
-        public bool CanTransfer { get; private set; }
+        public bool OwnershipTransfer;
+
+        public bool RuntimeSearch = true;
+        public List<IObservable> ObservedComponents = new();
 
         public bool IsMine => Owner.IsLocal();
+
+        private void Start() {
+            SearchObservables();
+        }
+
+        private void SearchObservables() {
+            if (RuntimeSearch) {
+                ObservedComponents.AddRange(GetComponentsInChildren<IObservable>());
+            }
+        }
+    }
+
+    public interface IObservable {
+        public void Serialize(Message message);
+        public void Deserialize(Message message);
     }
 }

@@ -1,14 +1,16 @@
-using KadenZombie8.BIMOS.Rig;
 using Riptide;
 using Riptide.Transports;
 using Riptide.Utils;
-using System;
 using System.Threading;
 using UnityEngine;
 
-namespace KadenZombie8.BIMOS.Networking
+namespace HL.Networking
 {
+    public enum ClientToServerID : ushort {
+        nickname = 1,
+    }
     public static partial class Network {
+        public static string Nickname;
         public static Server Server {
             get; private set;
         }
@@ -21,8 +23,21 @@ namespace KadenZombie8.BIMOS.Networking
 
             Server = new();
             Client = new();
+            Client.ClientConnected += (_, _) => SendNickname();
             StartThread();
         }
+
+        private static void SendNickname() {
+            Message message = Message.Create(MessageSendMode.Reliable, (ushort)ClientToServerID.nickname);
+            message.Add(Nickname);
+            Client.Send(message);
+        }
+
+        [MessageHandler((ushort)ClientToServerID.nickname)]
+        private static void RecieveNickname() {
+            RiptideLogger.Log(Riptide.Utils.LogType.);
+        }
+
         internal static void StartThread() {
             _riptideThread = new Thread(RiptideThread);
 

@@ -1,7 +1,6 @@
 using UnityEngine;
 
-namespace KadenZombie8.BIMOS.Networking
-{
+namespace HL.Networking {
     public class NetworkGUI : MonoBehaviour
     {
         private string address = string.Empty;
