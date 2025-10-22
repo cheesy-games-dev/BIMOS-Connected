@@ -1,74 +1,46 @@
 using Riptide;
 using Riptide.Transports;
 using Riptide.Utils;
+using System.Collections.Generic;
 using System.Threading;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace HL.Networking
 {
-    public enum ClientToServerID : ushort {
-        nickname = 1,
-    }
     public static partial class Network {
-        public static string Nickname;
         public static Server Server {
-            get; private set;
+            get; internal set;
         }
         public static Client Client {
-            get; private set;
+            get; internal set;
         }
-        private static Thread _riptideThread;
+        public static NetworkSettings Settings {
+            get; internal set;
+        }
         static Network() {
             RiptideLogger.Initialize(Debug.Log, Debug.Log, Debug.LogWarning, Debug.LogError, false);
-
-            Server = new();
-            Client = new();
-            Client.ClientConnected += (_, _) => SendNickname();
-            StartThread();
+            var handler = new GameObject("NetworkHandler", typeof(NetworkHandler));
+            Object.DontDestroyOnLoad(handler);
         }
 
-        private static void SendNickname() {
-            Message message = Message.Create(MessageSendMode.Reliable, (ushort)ClientToServerID.nickname);
-            message.Add(Nickname);
-            Client.Send(message);
-        }
-
-        [MessageHandler((ushort)ClientToServerID.nickname)]
-        private static void RecieveNickname() {
-            RiptideLogger.Log(Riptide.Utils.LogType.);
-        }
-
-        internal static void StartThread() {
-            _riptideThread = new Thread(RiptideThread);
-
-            if (_riptideThread.IsAlive)
-                return;
-
-            _riptideThread.IsBackground = true;
-            _riptideThread.Start();
-        }
         public static void ChangeTransport(IServer server, IClient client) {
             Server?.ChangeTransport(server);
             Client?.ChangeTransport(client);
         }
         public static void InitializeHost(ushort maxClients, ushort port) {
             InitializeServer(maxClients, port);
-            Connect("127.0.0.1", 25000);
+            Connect("127.0.0.1", port);
         }
         public static void InitializeServer(ushort maxClients, ushort port) {
             Server?.Start(port, maxClients);
         }
         public static void Connect(string address, ushort port) {
-            Client?.Connect(address);
+            Client?.Connect($"{address}:{port}");
         }
         public static void Disconnect() {
             Server?.Stop();
             Client?.Disconnect();
         }
-
-        private static void RiptideThread() {
-            Server?.Update();
-            Client?.Update();
-        }
-    }
+    }  
 }

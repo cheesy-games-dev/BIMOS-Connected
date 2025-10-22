@@ -1,3 +1,4 @@
+using Riptide.Utils;
 using UnityEngine;
 
 namespace HL.Networking {
@@ -6,6 +7,12 @@ namespace HL.Networking {
         private string address = string.Empty;
         private ushort port = 7777;
         private ushort maxclients = 32;
+        public bool DebugMode = true;
+        private void Start() {
+            if(DebugMode) RiptideLogger.EnableLoggingFor(Riptide.Utils.LogType.Debug, Debug.Log);
+            else
+                RiptideLogger.EnableLoggingFor(Riptide.Utils.LogType.Debug, Debug.Log);
+        }
         private void OnGUI() {
             GUILayout.Box("Network Status");
             GUILayout.Label($"Server Running: {Network.Server.IsRunning}");

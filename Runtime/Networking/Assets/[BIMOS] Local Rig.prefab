@@ -2341,7 +2341,7 @@ PrefabInstance:
       objectReference: {fileID: 9000000, guid: 30e0d8e5271d1fd48b3f24b4418405aa, type: 3}
     - target: {fileID: 3169780607551956412, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
       propertyPath: m_Name
-      value: '[BIMOS] Networked Rig'
+      value: '[BIMOS] Local Rig'
       objectReference: {fileID: 0}
     - target: {fileID: 3709441423979575950, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2401,32 +2401,8 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6304793145192069567, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5085558321834547912}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3169780607551956412, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 126364712810157815}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
---- !u!1 &2905305412102676885 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3169780607551956412, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
-  m_PrefabInstance: {fileID: 264838584189060137}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &126364712810157815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2905305412102676885}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecda6bd7b9de41a448e95c0205c324cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: kadenzombie8.bimos.networking::KadenZombie8.BIMOS.Networking.NetworkView
-  Id: 0
-  OwnershipTransfer: 1
-  ActiveOnDisconnect: 1
-  RuntimeSearch: 1
 --- !u!4 &6112504805103877526 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6304793145192069567, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}

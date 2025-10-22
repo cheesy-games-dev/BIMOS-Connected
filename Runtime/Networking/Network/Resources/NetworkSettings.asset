@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21bebec13de552343a0eba1896509bac, type: 3}
+  m_Name: NetworkSettings
+  m_EditorClassIdentifier: hl.network::HL.Networking.NetworkSettings
+  Author: DefaultCompany
+  App: Netmos WIP
+  Prefabs:
+  - key: balls
+    value: {fileID: 2905305412102676885, guid: c7e41f53002331a41b5bddf16363fe2d, type: 3}

@@ -6,21 +6,20 @@ using System;
 namespace HL.Networking {
     public class NetworkView : MonoBehaviour
     {
-        public static Dictionary<ushort, NetworkView> Views = new Dictionary<ushort, NetworkView>();
+        public ushort Id = 0;
 
-        public ushort Id;
+        public ushort Owner = 0;
 
-        public Connection Owner;
-
-        public bool OwnershipTransfer;
-
+        public bool OwnershipTransfer = true;
+        public bool ActiveOnDisconnect = true;
         public bool RuntimeSearch = true;
         public List<IObservable> ObservedComponents = new();
 
-        public bool IsMine => Owner.IsLocal();
+        public bool IsMine => Owner == Network.Client.Id;
 
         private void Start() {
             SearchObservables();
+            Network.AllocateViewID(this);
         }
 
         private void SearchObservables() {

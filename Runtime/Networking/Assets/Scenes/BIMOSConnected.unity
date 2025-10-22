@@ -238,6 +238,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1635638286}
     m_Modifications:
+    - target: {fileID: 515674729274989138, guid: 59baee90e2c9810449e8ba0267d1addc, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 515674729274989138, guid: 59baee90e2c9810449e8ba0267d1addc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 573321424478255055, guid: 59baee90e2c9810449e8ba0267d1addc, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 573321424478255055, guid: 59baee90e2c9810449e8ba0267d1addc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 573321424478255055, guid: 59baee90e2c9810449e8ba0267d1addc, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 796518858297781726, guid: 59baee90e2c9810449e8ba0267d1addc, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -247,6 +267,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 796518858297781726, guid: 59baee90e2c9810449e8ba0267d1addc, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612728897919642215, guid: 59baee90e2c9810449e8ba0267d1addc, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612728897919642215, guid: 59baee90e2c9810449e8ba0267d1addc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612728897919642215, guid: 59baee90e2c9810449e8ba0267d1addc, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
@@ -312,6 +344,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5289576401250805562, guid: 59baee90e2c9810449e8ba0267d1addc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7378665482148482682, guid: 59baee90e2c9810449e8ba0267d1addc, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7378665482148482682, guid: 59baee90e2c9810449e8ba0267d1addc, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8865921788632713667, guid: 59baee90e2c9810449e8ba0267d1addc, type: 3}
@@ -1707,6 +1747,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1234229808}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1273799565
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1273799566}
+  - component: {fileID: 1273799567}
+  m_Layer: 0
+  m_Name: Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1273799566
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273799565}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.54, y: 0, z: -2.95}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1635638286}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1273799567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273799565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d48b69b75cb4baa489e0ec0f1e5e3cf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: hl.network::HL.Networking.PlayerSpawner
+  PlayerPrefab: {fileID: 2905305412102676885, guid: c7e41f53002331a41b5bddf16363fe2d, type: 3}
 --- !u!1 &1281752607
 GameObject:
   m_ObjectHideFlags: 0
@@ -2008,6 +2093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c770d6859c0ce1648875ae780cd36353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: kadenzombie8.bimos.networking::KadenZombie8.BIMOS.Networking.NetworkGUI
+  DebugMode: 1
 --- !u!1 &1417759004
 GameObject:
   m_ObjectHideFlags: 0
@@ -2230,6 +2316,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1559761841}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1582643044
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1582643045}
+  - component: {fileID: 1582643046}
+  m_Layer: 0
+  m_Name: Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1582643045
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582643044}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.4, y: 0, z: 6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1635638286}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1582643046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582643044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d48b69b75cb4baa489e0ec0f1e5e3cf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: hl.network::HL.Networking.PlayerSpawner
+  PlayerPrefab: {fileID: 2905305412102676885, guid: c7e41f53002331a41b5bddf16363fe2d, type: 3}
 --- !u!1 &1635638285
 GameObject:
   m_ObjectHideFlags: 0
@@ -2260,6 +2391,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1407779226}
+  - {fileID: 1273799566}
+  - {fileID: 1582643045}
   - {fileID: 17523420}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
