@@ -2,24 +2,17 @@ using UnityEngine;
 using FishNet.Object;
 using KadenZombie8.BIMOS.Rig;
 namespace KadenZombie8.BIMOS.Networking {
+    [DefaultExecutionOrder(-2), DisallowMultipleComponent]
     public class NetworkRig : NetworkBehaviour {
-        public BIMOSRig MyRig {
-            get; internal set;
-        }
-
-        public static NetworkRig LocalNetworkRig;
+        public BIMOSRig rig;
         public override void OnStartClient() {
             base.OnStartClient();
-            MyRig.PhysicsRig.enabled = false;
-            if (IsOwner) {
-                MyRig.AnimationRig.gameObject.SetActive(false);
+            rig = GetComponent<BIMOSRig>();
+            rig.enabled = IsOwner;
+            if (!IsOwner) {
+                rig.ControllerRig.gameObject.SetActive(false);
+                rig.PhysicsRig.enabled = false;
             }
-        }
-        private void Update() {
-            if (!IsOwner)
-                return;
-            MyRig.PhysicsRig.Rigidbodies.Pelvis.position = BIMOSRig.Instance.PhysicsRig.Rigidbodies.Pelvis.position;
-            MyRig.PhysicsRig.Rigidbodies.Pelvis.rotation = BIMOSRig.Instance.PhysicsRig.Rigidbodies.Pelvis.rotation;
         }
     }
 }

@@ -10,11 +10,11 @@ namespace KadenZombie8.BIMOS.Rig.Spawning
     {
         public static SpawnPointManager Instance { get; private set; }
 
+        private BIMOSRig _player => BIMOSRig.Instance;
+
         public event Action OnRespawn;
 
         public SpawnPoint SpawnPoint;
-
-        private BIMOSRig _player;
 
         private void Awake()
         {
@@ -24,8 +24,6 @@ namespace KadenZombie8.BIMOS.Rig.Spawning
                 return;
             }
             Instance = this;
-
-            _player = BIMOSRig.Instance;
 
             if (!SpawnPoint)
             {

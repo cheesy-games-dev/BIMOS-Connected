@@ -4,6 +4,8 @@ using FishNet.Connection;
 using FishNet.Managing;
 using FishNet.Object;
 using FishNet;
+using KadenZombie8.BIMOS.Rig.Spawning;
+using System;
 
 namespace KadenZombie8.BIMOS.Networking
 {
@@ -11,7 +13,7 @@ namespace KadenZombie8.BIMOS.Networking
     {
         [Tooltip("Prefab to spawn for the player.")]
         [SerializeField]
-        private NetworkObject _networkRigVariantPrefab;
+        public NetworkObject networkRigPrefab;
 
 
         private void Awake() {
@@ -34,15 +36,20 @@ namespace KadenZombie8.BIMOS.Networking
         private void SceneManager_OnClientLoadedStartScenes(NetworkConnection conn, bool asServer) {
             if (!asServer)
                 return;
-            if (_networkRigVariantPrefab == null) {
+            if (networkRigPrefab == null) {
                 NetworkManagerExtensions.LogWarning($"Player prefab is empty and cannot be spawned for connection {conn.ClientId}.");
                 return;
             }
-
-            NetworkObject nob = InstanceFinder.NetworkManager.GetPooledInstantiated(_networkRigVariantPrefab, Vector3.zero, Quaternion.identity, true);
+            GetCurrentSpawnPointCords(out Vector3 pos, out Quaternion rot);
+            NetworkObject nob = InstanceFinder.NetworkManager.GetPooledInstantiated(networkRigPrefab, pos, rot, true);
             InstanceFinder.ServerManager.Spawn(nob, conn);
 
             InstanceFinder.SceneManager.AddOwnerToDefaultScene(nob);
+        }
+
+        private void GetCurrentSpawnPointCords(out Vector3 pos, out Quaternion rot) {
+            pos = SpawnPointManager.Instance.SpawnPoint.transform.position;
+            rot = SpawnPointManager.Instance.SpawnPoint.transform.rotation;
         }
     }
 }
