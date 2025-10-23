@@ -13,7 +13,7 @@ namespace KadenZombie8.BIMOS.Rig
         public AnimationRig AnimationRig;
 
         private void Awake() {
-            int layer = LayerMask.GetMask("Player", "Rig", "BIMOSRig", "BIPEDRig");
+            int layer = LayerMask.GetMask("Player");
             Physics.IgnoreLayerCollision(layer, layer, true);
         }
     }
