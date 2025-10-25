@@ -1,6 +1,6 @@
 using UnityEngine;
-using FishNet.Object;
 using KadenZombie8.BIMOS.Rig;
+using Mirror;
 namespace KadenZombie8.BIMOS.Networking {
     [DefaultExecutionOrder(-2), DisallowMultipleComponent]
     public class NetworkRig : NetworkBehaviour {
@@ -8,8 +8,8 @@ namespace KadenZombie8.BIMOS.Networking {
         public override void OnStartClient() {
             base.OnStartClient();
             rig = GetComponent<BIMOSRig>();
-            rig.enabled = IsOwner;
-            if (!IsOwner) {
+            rig.enabled = isLocalPlayer;
+            if (!rig.enabled) {
                 rig.ControllerRig.gameObject.SetActive(false);
                 rig.PhysicsRig.enabled = false;
             }

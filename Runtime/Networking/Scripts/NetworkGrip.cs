@@ -1,8 +1,7 @@
 using UnityEngine;
-using FishNet.Object;
 using KadenZombie8.BIMOS.Rig;
 using System;
-using FishNet.Connection;
+using Mirror;
 
 namespace KadenZombie8.BIMOS.Networking {
     [RequireComponent(typeof(Grabbable))]
@@ -19,14 +18,14 @@ namespace KadenZombie8.BIMOS.Networking {
             if(hand)SendGrabMessage(hand.transform.position);
         }
 
-        [ServerRpc(RequireOwnership = false)]
-        private void SendGrabMessage(Vector3 hand, NetworkConnection conn = null) {
-            Debug.Log($"[NETMOS] Received Grab Message from {conn.GetAddress()}");
+        [Command(requiresAuthority = false)]
+        private void SendGrabMessage(Vector3 hand, NetworkConnectionToClient conn = null) {
+            Debug.Log($"[NETMOS] Received Grab Message from {conn.address}");
             if (Vector3.Distance(transform.position, hand) > MAXDISTANCE)
                 return;
-            Debug.Log($"[NETMOS] Giving Ownership to {conn.GetAddress()}");
-            NetworkObject.RemoveOwnership(false);
-            NetworkObject.GiveOwnership(conn);
+            Debug.Log($"[NETMOS] Giving Ownership to {conn.address}");
+            netIdentity.RemoveClientAuthority();
+            netIdentity.AssignClientAuthority(conn);
         }
     }
 }

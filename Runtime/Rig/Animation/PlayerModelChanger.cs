@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using KadenZombie8.BIMOS.Rig;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 
 namespace KadenZombie8.BIMOS.Editor
@@ -58,7 +60,7 @@ namespace KadenZombie8.BIMOS.Editor
             DestroyImmediate(characterModel);
         }
     }
-
+#if UNITY_EDITOR
     [CustomEditor(typeof(PlayerModelChanger))]
     class PlayerModelChangerEditor : UnityEditor.Editor
     {
@@ -84,4 +86,5 @@ namespace KadenZombie8.BIMOS.Editor
 
         }
     }
+#endif
 }
