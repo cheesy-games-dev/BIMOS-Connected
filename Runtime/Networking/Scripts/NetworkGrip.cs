@@ -5,25 +5,39 @@ using Mirror;
 
 namespace KadenZombie8.BIMOS.Networking {
     [RequireComponent(typeof(Grabbable))]
-    public class NetworkGrip : NetworkBehaviour {
-        private Grabbable _grip;
-        public const float MAXDISTANCE = 500;
-        private void Start() {
-            _grip = GetComponent<Grabbable>();
-            _grip.OnGrab += OnGrab;
+    public class NetworkGrip : NetworkBehaviour, IOwnershipEvents {
+        [SerializeField]
+        private bool initializeUnparented = true;
+
+        private Grabbable grabbable;
+        private Rigidbody rb;
+
+        private void Awake() {
+            rb = GetComponent<Rigidbody>();
+            grabbable = GetComponent<Grabbable>();
+
+            grabbable.OnGrab += OnGrabbed;
         }
-        private void OnGrab() {
-            Debug.Log("[NETMOS] Sending Grab Message");
-            Hand hand = _grip.RightHand ? _grip.RightHand : _grip.LeftHand;
-            if(hand)SendGrabMessage(hand.transform.position);
+
+        protected override void OnValidate() {
+            base.OnValidate();
+            syncDirection = SyncDirection.ServerToClient;
+        }
+
+        private void OnGrabbed() {
+            CmdSendTakeover();
+        }
+
+        public override void OnStartServer() {
+            if (NetworkServer.active && NetworkServer.connections.Count > 0) {
+                netIdentity.AssignClientAuthority(NetworkServer.connections[0]);
+            }
         }
 
         [Command(requiresAuthority = false)]
-        private void SendGrabMessage(Vector3 hand, NetworkConnectionToClient conn = null) {
-            Debug.Log($"[NETMOS] Received Grab Message from {conn.address}");
-            if (Vector3.Distance(transform.position, hand) > MAXDISTANCE)
+        private void CmdSendTakeover(NetworkConnectionToClient conn = null) {
+            if (connectionToClient == conn)
                 return;
-            Debug.Log($"[NETMOS] Giving Ownership to {conn.address}");
             netIdentity.RemoveClientAuthority();
             netIdentity.AssignClientAuthority(conn);
         }
