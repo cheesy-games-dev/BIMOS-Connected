@@ -15,7 +15,11 @@ namespace KadenZombie8.BIMOS.Rig.Movement
         private ScreenModeController _rightHand;
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         private readonly float _lookSensitivity = 0.02f;
+=======
+        private readonly float _lookSensitivity = 0.1f;
+>>>>>>> Stashed changes
 =======
         private readonly float _lookSensitivity = 0.1f;
 >>>>>>> Stashed changes
