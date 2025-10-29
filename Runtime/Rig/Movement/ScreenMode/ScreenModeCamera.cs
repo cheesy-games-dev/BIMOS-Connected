@@ -14,7 +14,11 @@ namespace KadenZombie8.BIMOS.Rig.Movement
         [SerializeField]
         private ScreenModeController _rightHand;
 
+<<<<<<< Updated upstream
         private readonly float _lookSensitivity = 0.02f;
+=======
+        private readonly float _lookSensitivity = 0.1f;
+>>>>>>> Stashed changes
         private readonly float _maxAngle = 90f;
         private readonly float _minAngle = -90f;
         private Vector2 _cameraRotation;

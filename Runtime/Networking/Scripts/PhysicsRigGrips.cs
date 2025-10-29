@@ -1,17 +1,16 @@
+using FishNet.Object;
 using KadenZombie8.BIMOS.Rig;
 using KadenZombie8.BIMOS.Rig.Movement;
-using Mirror;
 using UnityEngine;
 
 namespace KadenZombie8.BIMOS.Networking
 {
     [DisallowMultipleComponent]
-    public class PhysicsRigGrips : NetworkBehaviour
+    public class PhysicsRigGrips : MonoBehaviour
     {
         public PhysicsRig physicsRig;
-        public override void OnStartClient() {
-            base.OnStartClient();
-            if (isLocalPlayer)
+        private void Start() {
+            if (physicsRig.enabled)
                 return;
             physicsRig.Colliders.Body.AddComponent<AutoGrabbable>();
             physicsRig.Colliders.Head.AddComponent<AutoGrabbable>();
