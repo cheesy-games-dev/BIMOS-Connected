@@ -1,13 +1,8 @@
 using UnityEngine;
-using System;
 using System.Collections.Generic;
-using FishNet;
-using FishNet.Broadcast;
-using FishNet.Connection;
 using KadenZombie8.BIMOS.Rig;
 using KadenZombie8.BIMOS.Rig.Movement;
-using FishNet.Transporting;
-using FishNet.Object;
+using Riptide;
 
 namespace KadenZombie8.BIMOS.Networking {
     public class BIMOSManager : MonoBehaviour {
@@ -27,18 +22,15 @@ namespace KadenZombie8.BIMOS.Networking {
             InstanceFinder.SceneManager.OnClientLoadedStartScenes += SceneManager_OnClientLoadedStartScenes;
         }
 
-        [Client]
         private void SyncPlayerClientCallback(SyncPlayer player, Channel channel) {
             var rig = BIMOSRigs[player.clientId];
             player.SetPhysicsRig(rig.PhysicsRig);
         }
-        [Server]
         private void SyncPlayerServerCallback(NetworkConnection connection, SyncPlayer player, Channel channel) {
             player.clientId = connection.ClientId;
             InstanceFinder.ServerManager.BroadcastExcept(connection, player);
         }
 
-        [Client]
         private void SpawnPlayerCallback(SpawnPlayer player, Channel channel) {
             var rig = Instantiate(BIMOSRigPrefab);
             rig.enabled = false;
@@ -49,10 +41,11 @@ namespace KadenZombie8.BIMOS.Networking {
 
         private void Update() {
             SyncPlayer player = new(BIMOSRig.Instance.PhysicsRig, -1);
-            InstanceFinder.ClientManager.Broadcast(player);
+            Message message = Message.Create(MessageSendMode.Unreliable, (ushort)ServerMessages.SyncPlayer);
+            message.Add(player);
+            Network.Client.Send(message);
         }
 
-        [Server]
         private void SceneManager_OnClientLoadedStartScenes(NetworkConnection conn, bool asServer) {
             SpawnPlayer player = new SpawnPlayer {
                 clientId = conn.ClientId
@@ -61,11 +54,29 @@ namespace KadenZombie8.BIMOS.Networking {
         }
     }
 
-    public struct SpawnPlayer : IBroadcast {
-        public int clientId;
+    public enum ServerMessages : ushort {
+        SpawnPlayer = 1,
+        SyncPlayer = 2,
     }
 
-    public struct SyncPlayer : IBroadcast {
+    public enum ClientMessages : ushort {
+        PlayerSpawned = 1,
+        PlayerSynced = 2,
+    }
+
+    public struct SpawnPlayer : IMessageSerializable {
+        public int clientId;
+
+        public void Deserialize(Message message) {
+            clientId = message.GetInt();
+        }
+
+        public void Serialize(Message message) {
+            message.Add(clientId);
+        }
+    }
+
+    public struct SyncPlayer : IMessageSerializable {
         public int clientId;
         public TransformStruct locoball;
         public TransformStruct knee;
@@ -83,7 +94,19 @@ namespace KadenZombie8.BIMOS.Networking {
             rightHand = new(rig.Rigidbodies.RightHand);
         }
 
+        public void Deserialize(Message message) {
+            throw new System.NotImplementedException();
+        }
 
+        public void Serialize(Message message) {
+            message.Add(clientId);
+            message.Add(locoball);
+            message.Add(knee);
+            message.Add(pelvis);
+            message.Add(head);
+            message.Add(leftHand);
+            message.Add(rightHand);
+        }
 
         public void SetPhysicsRig(PhysicsRig rig) {
             rig.Rigidbodies.LocomotionSphere.Copy(locoball);
@@ -94,7 +117,7 @@ namespace KadenZombie8.BIMOS.Networking {
             rig.Rigidbodies.RightHand.Copy(rightHand);
         }
 
-        public struct TransformStruct {
+        public struct TransformStruct : IMessageSerializable {
             public Vector3 position;
             public Quaternion rotation;
             public Vector3 scale;
@@ -113,6 +136,22 @@ namespace KadenZombie8.BIMOS.Networking {
                 scale = transform.localScale;
                 velocity = Vector3.zero;
                 angularVelocity = Vector3.zero;
+            }
+
+            public void Deserialize(Message message) {
+                position = message.GetVector3();
+                rotation = message.GetQuaternion();
+                scale = message.GetVector3();
+                velocity = message.GetVector3();
+                angularVelocity = message.GetVector3();
+            }
+
+            public void Serialize(Message message) {
+                message.Add(position);
+                message.Add(rotation);
+                message.Add(scale);
+                message.Add(velocity);
+                message.Add(angularVelocity);
             }
         }
     }
