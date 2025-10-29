@@ -280,10 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e8980bf32c4d2042a7aaad726fabf78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: kadenzombie8.bimos.networking::KadenZombie8.BIMOS.Networking.NetworkGrip
-  _componentIndexCache: 255
-  _addedNetworkObject: {fileID: 14180533}
-  _networkObjectCache: {fileID: 0}
-  initializeUnparented: 1
+  NetId: 0
 --- !u!114 &14180527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -689,10 +686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e8980bf32c4d2042a7aaad726fabf78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: kadenzombie8.bimos.networking::KadenZombie8.BIMOS.Networking.NetworkGrip
-  _componentIndexCache: 255
-  _addedNetworkObject: {fileID: 202022957}
-  _networkObjectCache: {fileID: 0}
-  initializeUnparented: 1
+  NetId: 0
 --- !u!114 &202022956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -854,10 +848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e8980bf32c4d2042a7aaad726fabf78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: kadenzombie8.bimos.networking::KadenZombie8.BIMOS.Networking.NetworkGrip
-  _componentIndexCache: 255
-  _addedNetworkObject: {fileID: 265042266}
-  _networkObjectCache: {fileID: 0}
-  initializeUnparented: 1
+  NetId: 0
 --- !u!114 &265042260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1390,10 +1381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e8980bf32c4d2042a7aaad726fabf78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: kadenzombie8.bimos.networking::KadenZombie8.BIMOS.Networking.NetworkGrip
-  _componentIndexCache: 255
-  _addedNetworkObject: {fileID: 421467317}
-  _networkObjectCache: {fileID: 0}
-  initializeUnparented: 1
+  NetId: 0
 --- !u!114 &421467316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1677,10 +1665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e8980bf32c4d2042a7aaad726fabf78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: kadenzombie8.bimos.networking::KadenZombie8.BIMOS.Networking.NetworkGrip
-  _componentIndexCache: 255
-  _addedNetworkObject: {fileID: 527491959}
-  _networkObjectCache: {fileID: 0}
-  initializeUnparented: 1
+  NetId: 0
 --- !u!114 &527491958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3653,10 +3638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e8980bf32c4d2042a7aaad726fabf78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: kadenzombie8.bimos.networking::KadenZombie8.BIMOS.Networking.NetworkGrip
-  _componentIndexCache: 255
-  _addedNetworkObject: {fileID: 1492161061}
-  _networkObjectCache: {fileID: 0}
-  initializeUnparented: 1
+  NetId: 0
 --- !u!114 &1492161055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4904,10 +4886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e8980bf32c4d2042a7aaad726fabf78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: kadenzombie8.bimos.networking::KadenZombie8.BIMOS.Networking.NetworkGrip
-  _componentIndexCache: 255
-  _addedNetworkObject: {fileID: 2012919305}
-  _networkObjectCache: {fileID: 0}
-  initializeUnparented: 1
+  NetId: 0
 --- !u!114 &2012919304
 MonoBehaviour:
   m_ObjectHideFlags: 0
