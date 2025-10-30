@@ -21,17 +21,17 @@ namespace KadenZombie8.BIMOS.Networking {
             OnStartServer();
         }
 
-        [Client]
+        [ClientCallback]
         private void OnGrabbed() {
             SendGripTakeover();
         }
 
-        [Client]
+        [ClientCallback]
         private void SendGripTakeover() {
             InstanceFinder.ClientManager.Broadcast(new GripTakeover(id));
         }
 
-        [Server]
+        [ServerCallback]
         private void OnStartServer() {
             InstanceFinder.ServerManager.RegisterBroadcast<GripTakeover>(ServerGripTakeover);
             if (networkObject.LocalConnection != null) {
@@ -39,7 +39,7 @@ namespace KadenZombie8.BIMOS.Networking {
             }
         }
 
-        [Server]
+        [ServerCallback]
         private static void ServerGripTakeover(NetworkConnection conn, GripTakeover grip, Channel channel) {
             if(channel != Channel.Reliable)
                 return;
