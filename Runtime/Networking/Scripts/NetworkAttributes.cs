@@ -23,27 +23,4 @@ namespace KadenZombie8.BIMOS.Networking
             OnlyClient = onlyClient;
         }
     }
-    [AttributeUsage(AttributeTargets.Method, Inherited = false)]
-    public class Rpc : Attribute {
-        public Target RpcTarget {
-            get; private set;
-        }
-        public MessageSendMode RpcSendMode {
-            get; private set;
-        }
-        public Rpc(Target Target = Target.All, MessageSendMode SendMode = MessageSendMode.Reliable) {
-            RpcTarget = Target;
-            RpcSendMode = SendMode;
-        }
-        /// <summary>
-        /// Tasks:
-        /// - Add buffered later
-        /// </summary>
-        public enum Target {
-            All,
-            Server,
-            Clients,
-            Others,
-        }
-    }
 }

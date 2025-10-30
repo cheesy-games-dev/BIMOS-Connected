@@ -1,4 +1,3 @@
-using FishNet.Object;
 using KadenZombie8.BIMOS.Rig;
 using KadenZombie8.BIMOS.Rig.Movement;
 using UnityEngine;

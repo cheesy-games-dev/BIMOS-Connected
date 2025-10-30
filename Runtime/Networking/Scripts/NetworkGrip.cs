@@ -1,6 +1,7 @@
 using UnityEngine;
 using KadenZombie8.BIMOS.Rig;
 using System.Collections.Generic;
+using Riptide;
 
 namespace KadenZombie8.BIMOS.Networking {
     [RequireComponent(typeof(Grabbable))]
@@ -8,11 +9,9 @@ namespace KadenZombie8.BIMOS.Networking {
         private static Dictionary<int, NetworkGrip> gripInstances = new Dictionary<int, NetworkGrip>();
         public int id;
         private Grabbable grabbable;
-        private Rigidbody rb;
 
         private void Awake() {
             id = gripInstances.AllocateId(this);
-            rb = GetComponent<Rigidbody>();
             grabbable = GetComponent<Grabbable>();
             grabbable.OnGrab += OnGrabbed;
         }
@@ -28,33 +27,27 @@ namespace KadenZombie8.BIMOS.Networking {
 
         [ClientCallback]
         private void SendGripTakeover() {
-            InstanceFinder.ClientManager.Broadcast(new GripTakeover(id));
+            Message message = Message.Create(MessageSendMode.Reliable, (ushort)ServerMessages.GripTakeover);
+            message.Add(new GripTakeover(id));
+            Network.Client.Send(message);
         }
 
         [ServerCallback]
         private void OnStartServer() {
-            InstanceFinder.ServerManager.RegisterBroadcast<GripTakeover>(ServerGripTakeover);
-            if (networkObject.LocalConnection != null) {
-                networkObject.GiveOwnership(networkObject.LocalConnection);
+            if (Network.Client.IsConnected) {
+                View.GiveOwnership(Network.Client.Connection.Id);
             }
         }
 
-        [ServerCallback]
-        private static void ServerGripTakeover(NetworkConnection conn, GripTakeover grip, Channel channel) {
-            if(channel != Channel.Reliable)
+        [ServerCallback, MessageHandler((ushort)ServerMessages.GripTakeover)]
+        internal static void ServerGripTakeover(Connection conn, Message message) {
+            var grip = message.GetSerializable<GripTakeover>();
+            var networkObject = gripInstances[grip.netId].View;
+            if (networkObject.Owner == conn.Id)
                 return;
-            var networkObject = gripInstances[grip.netId].networkObject;
-            if (networkObject.Owner == conn)
-                return;
-            networkObject.RemoveOwnership(false);
-            networkObject.GiveOwnership(conn);
-        }
-    }
-
-    public struct GripTakeover : IBroadcast {
-        public int netId;
-        public GripTakeover(int netId) {
-            this.netId = netId;
+            networkObject.RemoveOwnership();
+            networkObject.GiveOwnership(conn.Id);
+            ;
         }
     }
 }

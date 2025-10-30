@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace KadenZombie8.BIMOS.Networking
 {
@@ -7,10 +6,13 @@ namespace KadenZombie8.BIMOS.Networking
     {
         public static int AllocateId<T>(this Dictionary<int, T> dictionary, T value) {
             int id = 0;
-            while (dictionary.ContainsKey(id)) {
+            while (dictionary.ContainsKey(id)) {            
                 id++;
+                if (dictionary[id].Equals(value)) {
+                    break;
+                }
             }
-            dictionary.Add(id, value);
+            dictionary.TryAdd(id, value);
             return id;
         }
     }

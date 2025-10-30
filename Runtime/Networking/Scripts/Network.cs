@@ -18,6 +18,8 @@ namespace KadenZombie8.BIMOS.Networking
         public static Client Client {
             get; private set;
         }
+        public static Action OnServerLoadedScene;
+        public static Action OnClientLoadedScene;
         static Network() {
             StartThread();
         }
@@ -62,5 +64,9 @@ namespace KadenZombie8.BIMOS.Networking
             Server.ChangeTransport(server);
             Client.ChangeTransport(client);
         }
+    }
+    public enum MessageId : ushort {
+        OwnershipChange = 1,
+        Observable,
     }
 }
