@@ -9,8 +9,8 @@ namespace KadenZombie8.BIMOS.Networking
         public bool ClientAuthority = true;
         public MessageSendMode SendMode;
         private new Rigidbody rigidbody;
-        public RigidbodyData data;
-        public bool CanWrite => ClientAuthority ? View.IsMine : Network.Server.IsRunning;
+        public RigidbodyData data = new();
+        public bool CanWrite => ClientAuthority ? View.IsMine && Network.Client.IsConnected : Network.Server.IsRunning;
         void Start() {
             rigidbody = GetComponent<Rigidbody>();
         }

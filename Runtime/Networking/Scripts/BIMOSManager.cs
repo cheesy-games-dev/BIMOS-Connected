@@ -41,6 +41,8 @@ namespace KadenZombie8.BIMOS.Networking {
         }
 
         private void Update() {
+            if (!Network.Client.IsConnected)
+                return;
             SyncPlayer player = new(BIMOSRig.Instance.PhysicsRig, -1);
             Message message = Message.Create(MessageSendMode.Unreliable, (ushort)ServerMessages.SyncPlayer);
             message.Add(player);

@@ -40,8 +40,8 @@ namespace KadenZombie8.BIMOS.Networking
             InitalizeRiptide();
             while (_isThreadAlive) {
                 try {
-                    Client.Update();
                     Server.Update();
+                    Client.Update();
                 }
                 catch (Exception ex) {
                     RiptideLogger.Log(Riptide.Utils.LogType.Error, $"Failed to update Riptide with exception: {ex}");
@@ -56,8 +56,8 @@ namespace KadenZombie8.BIMOS.Networking
             RiptideLogger.Initialize(Debug.Log, Debug.Log, Debug.LogWarning, Debug.LogError, true);
             Message.MaxPayloadSize = 60000;
 
-            Client = new();
             Server = new();
+            Client = new();
         }
 
         public static void ChangeTransport(IServer server, IClient client) {
