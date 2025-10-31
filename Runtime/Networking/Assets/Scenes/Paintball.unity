@@ -280,7 +280,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e8980bf32c4d2042a7aaad726fabf78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: kadenzombie8.bimos.networking::KadenZombie8.BIMOS.Networking.NetworkGrip
-  id: 0
+  grabbable: {fileID: 0}
+  netIdentity: {fileID: 0}
 --- !u!114 &14180527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,9 +426,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 14180521}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83ae0337ecba923488f3ba1ecab67a14, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: kadenzombie8.bimos.networking::KadenZombie8.BIMOS.Networking.NetworkView
+  m_EditorClassIdentifier: Mirror::Mirror.NetworkIdentity
+  sceneId: 4254914525
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!114 &14180534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,11 +443,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 14180521}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0759270642e810e4a8d2723bf5d60abd, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b20dc110904e47f8a154cdcf6433eae, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: kadenzombie8.bimos.networking::KadenZombie8.BIMOS.Networking.NetworkRigidbody
-  ClientAuthority: 1
-  SendMode: 0
+  m_EditorClassIdentifier: Mirror.Components::Mirror.NetworkRigidbodyUnreliable
+  syncDirection: 1
+  syncMode: 0
+  syncInterval: 0
+  target: {fileID: 14180532}
+  syncPosition: 1
+  syncRotation: 1
+  syncScale: 0
+  onlySyncOnChange: 1
+  compressRotation: 1
+  interpolatePosition: 1
+  interpolateRotation: 1
+  interpolateScale: 1
+  coordinateSpace: 0
+  timelineOffset: 1
+  showGizmos: 0
+  showOverlay: 0
+  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+  bufferResetMultiplier: 3
+  useFixedUpdate: 0
+  positionSensitivity: 0.01
+  rotationSensitivity: 0.01
+  scaleSensitivity: 0.01
 --- !u!1 &202022942
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,7 +640,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e8980bf32c4d2042a7aaad726fabf78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: kadenzombie8.bimos.networking::KadenZombie8.BIMOS.Networking.NetworkGrip
-  id: 0
+  grabbable: {fileID: 0}
+  netIdentity: {fileID: 0}
 --- !u!114 &202022956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -637,9 +664,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 202022942}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83ae0337ecba923488f3ba1ecab67a14, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: kadenzombie8.bimos.networking::KadenZombie8.BIMOS.Networking.NetworkView
+  m_EditorClassIdentifier: Mirror::Mirror.NetworkIdentity
+  sceneId: 3488561494
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!114 &202022958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -649,11 +681,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 202022942}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0759270642e810e4a8d2723bf5d60abd, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b20dc110904e47f8a154cdcf6433eae, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: kadenzombie8.bimos.networking::KadenZombie8.BIMOS.Networking.NetworkRigidbody
-  ClientAuthority: 1
-  SendMode: 0
+  m_EditorClassIdentifier: Mirror.Components::Mirror.NetworkRigidbodyUnreliable
+  syncDirection: 1
+  syncMode: 0
+  syncInterval: 0
+  target: {fileID: 202022950}
+  syncPosition: 1
+  syncRotation: 1
+  syncScale: 0
+  onlySyncOnChange: 1
+  compressRotation: 1
+  interpolatePosition: 1
+  interpolateRotation: 1
+  interpolateScale: 1
+  coordinateSpace: 0
+  timelineOffset: 1
+  showGizmos: 0
+  showOverlay: 0
+  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+  bufferResetMultiplier: 3
+  useFixedUpdate: 0
+  positionSensitivity: 0.01
+  rotationSensitivity: 0.01
+  scaleSensitivity: 0.01
 --- !u!1 &265042254
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,7 +756,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e8980bf32c4d2042a7aaad726fabf78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: kadenzombie8.bimos.networking::KadenZombie8.BIMOS.Networking.NetworkGrip
-  id: 0
+  grabbable: {fileID: 0}
+  netIdentity: {fileID: 0}
 --- !u!114 &265042260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -849,9 +902,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 265042254}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83ae0337ecba923488f3ba1ecab67a14, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: kadenzombie8.bimos.networking::KadenZombie8.BIMOS.Networking.NetworkView
+  m_EditorClassIdentifier: Mirror::Mirror.NetworkIdentity
+  sceneId: 2192084146
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!114 &265042267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -861,11 +919,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 265042254}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0759270642e810e4a8d2723bf5d60abd, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b20dc110904e47f8a154cdcf6433eae, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: kadenzombie8.bimos.networking::KadenZombie8.BIMOS.Networking.NetworkRigidbody
-  ClientAuthority: 1
-  SendMode: 0
+  m_EditorClassIdentifier: Mirror.Components::Mirror.NetworkRigidbodyUnreliable
+  syncDirection: 1
+  syncMode: 0
+  syncInterval: 0
+  target: {fileID: 265042265}
+  syncPosition: 1
+  syncRotation: 1
+  syncScale: 0
+  onlySyncOnChange: 1
+  compressRotation: 1
+  interpolatePosition: 1
+  interpolateRotation: 1
+  interpolateScale: 1
+  coordinateSpace: 0
+  timelineOffset: 1
+  showGizmos: 0
+  showOverlay: 0
+  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+  bufferResetMultiplier: 3
+  useFixedUpdate: 0
+  positionSensitivity: 0.01
+  rotationSensitivity: 0.01
+  scaleSensitivity: 0.01
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,7 +1243,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e8980bf32c4d2042a7aaad726fabf78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: kadenzombie8.bimos.networking::KadenZombie8.BIMOS.Networking.NetworkGrip
-  id: 0
+  grabbable: {fileID: 0}
+  netIdentity: {fileID: 0}
 --- !u!114 &421467316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1188,9 +1267,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 421467302}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83ae0337ecba923488f3ba1ecab67a14, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: kadenzombie8.bimos.networking::KadenZombie8.BIMOS.Networking.NetworkView
+  m_EditorClassIdentifier: Mirror::Mirror.NetworkIdentity
+  sceneId: 1462817141
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!114 &421467318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1200,11 +1284,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 421467302}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0759270642e810e4a8d2723bf5d60abd, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b20dc110904e47f8a154cdcf6433eae, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: kadenzombie8.bimos.networking::KadenZombie8.BIMOS.Networking.NetworkRigidbody
-  ClientAuthority: 1
-  SendMode: 0
+  m_EditorClassIdentifier: Mirror.Components::Mirror.NetworkRigidbodyUnreliable
+  syncDirection: 1
+  syncMode: 0
+  syncInterval: 0
+  target: {fileID: 421467310}
+  syncPosition: 1
+  syncRotation: 1
+  syncScale: 0
+  onlySyncOnChange: 1
+  compressRotation: 1
+  interpolatePosition: 1
+  interpolateRotation: 1
+  interpolateScale: 1
+  coordinateSpace: 0
+  timelineOffset: 1
+  showGizmos: 0
+  showOverlay: 0
+  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+  bufferResetMultiplier: 3
+  useFixedUpdate: 0
+  positionSensitivity: 0.01
+  rotationSensitivity: 0.01
+  scaleSensitivity: 0.01
 --- !u!1 &527491943
 GameObject:
   m_ObjectHideFlags: 0
@@ -1377,7 +1481,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e8980bf32c4d2042a7aaad726fabf78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: kadenzombie8.bimos.networking::KadenZombie8.BIMOS.Networking.NetworkGrip
-  id: 0
+  grabbable: {fileID: 0}
+  netIdentity: {fileID: 0}
 --- !u!114 &527491958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1400,9 +1505,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 527491943}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83ae0337ecba923488f3ba1ecab67a14, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: kadenzombie8.bimos.networking::KadenZombie8.BIMOS.Networking.NetworkView
+  m_EditorClassIdentifier: Mirror::Mirror.NetworkIdentity
+  sceneId: 764506974
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!114 &527491960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1412,11 +1522,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 527491943}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0759270642e810e4a8d2723bf5d60abd, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b20dc110904e47f8a154cdcf6433eae, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: kadenzombie8.bimos.networking::KadenZombie8.BIMOS.Networking.NetworkRigidbody
-  ClientAuthority: 1
-  SendMode: 0
+  m_EditorClassIdentifier: Mirror.Components::Mirror.NetworkRigidbodyUnreliable
+  syncDirection: 1
+  syncMode: 0
+  syncInterval: 0
+  target: {fileID: 527491944}
+  syncPosition: 1
+  syncRotation: 1
+  syncScale: 0
+  onlySyncOnChange: 1
+  compressRotation: 1
+  interpolatePosition: 1
+  interpolateRotation: 1
+  interpolateScale: 1
+  coordinateSpace: 0
+  timelineOffset: 1
+  showGizmos: 0
+  showOverlay: 0
+  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+  bufferResetMultiplier: 3
+  useFixedUpdate: 0
+  positionSensitivity: 0.01
+  rotationSensitivity: 0.01
+  scaleSensitivity: 0.01
 --- !u!1001 &548527841
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1616,7 +1746,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1264502304227618577, guid: 4da6aa54e983f034c879e883fd5514f0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1354504325}
   m_SourcePrefab: {fileID: 100100000, guid: 4da6aa54e983f034c879e883fd5514f0, type: 3}
 --- !u!4 &548527842 stripped
 Transform:
@@ -3016,6 +3149,25 @@ Transform:
   - {fileID: 820729008}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1354504322 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1264502304227618577, guid: 4da6aa54e983f034c879e883fd5514f0, type: 3}
+  m_PrefabInstance: {fileID: 548527841}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1354504325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354504322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6442dc8070ceb41f094e44de0bf87274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Mirror::Mirror.NetworkManagerHUD
+  offsetX: 0
+  offsetY: 0
 --- !u!1 &1417759004
 GameObject:
   m_ObjectHideFlags: 0
@@ -3177,7 +3329,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e8980bf32c4d2042a7aaad726fabf78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: kadenzombie8.bimos.networking::KadenZombie8.BIMOS.Networking.NetworkGrip
-  id: 0
+  grabbable: {fileID: 0}
+  netIdentity: {fileID: 0}
 --- !u!114 &1492161055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3322,9 +3475,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1492161049}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83ae0337ecba923488f3ba1ecab67a14, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: kadenzombie8.bimos.networking::KadenZombie8.BIMOS.Networking.NetworkView
+  m_EditorClassIdentifier: Mirror::Mirror.NetworkIdentity
+  sceneId: 3062940718
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!114 &1492161062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3334,11 +3492,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 1492161049}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0759270642e810e4a8d2723bf5d60abd, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b20dc110904e47f8a154cdcf6433eae, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: kadenzombie8.bimos.networking::KadenZombie8.BIMOS.Networking.NetworkRigidbody
-  ClientAuthority: 1
-  SendMode: 0
+  m_EditorClassIdentifier: Mirror.Components::Mirror.NetworkRigidbodyUnreliable
+  syncDirection: 1
+  syncMode: 0
+  syncInterval: 0
+  target: {fileID: 1492161060}
+  syncPosition: 1
+  syncRotation: 1
+  syncScale: 0
+  onlySyncOnChange: 1
+  compressRotation: 1
+  interpolatePosition: 1
+  interpolateRotation: 1
+  interpolateScale: 1
+  coordinateSpace: 0
+  timelineOffset: 1
+  showGizmos: 0
+  showOverlay: 0
+  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+  bufferResetMultiplier: 3
+  useFixedUpdate: 0
+  positionSensitivity: 0.01
+  rotationSensitivity: 0.01
+  scaleSensitivity: 0.01
 --- !u!1 &1559761841
 GameObject:
   m_ObjectHideFlags: 0
@@ -4353,7 +4531,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e8980bf32c4d2042a7aaad726fabf78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: kadenzombie8.bimos.networking::KadenZombie8.BIMOS.Networking.NetworkGrip
-  id: 0
+  grabbable: {fileID: 0}
+  netIdentity: {fileID: 0}
 --- !u!114 &2012919304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4376,9 +4555,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2012919290}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83ae0337ecba923488f3ba1ecab67a14, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: kadenzombie8.bimos.networking::KadenZombie8.BIMOS.Networking.NetworkView
+  m_EditorClassIdentifier: Mirror::Mirror.NetworkIdentity
+  sceneId: 240794272
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!114 &2012919306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4388,11 +4572,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 2012919290}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0759270642e810e4a8d2723bf5d60abd, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b20dc110904e47f8a154cdcf6433eae, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: kadenzombie8.bimos.networking::KadenZombie8.BIMOS.Networking.NetworkRigidbody
-  ClientAuthority: 1
-  SendMode: 0
+  m_EditorClassIdentifier: Mirror.Components::Mirror.NetworkRigidbodyUnreliable
+  syncDirection: 1
+  syncMode: 0
+  syncInterval: 0
+  target: {fileID: 2012919298}
+  syncPosition: 1
+  syncRotation: 1
+  syncScale: 0
+  onlySyncOnChange: 1
+  compressRotation: 1
+  interpolatePosition: 1
+  interpolateRotation: 1
+  interpolateScale: 1
+  coordinateSpace: 0
+  timelineOffset: 1
+  showGizmos: 0
+  showOverlay: 0
+  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+  bufferResetMultiplier: 3
+  useFixedUpdate: 0
+  positionSensitivity: 0.01
+  rotationSensitivity: 0.01
+  scaleSensitivity: 0.01
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

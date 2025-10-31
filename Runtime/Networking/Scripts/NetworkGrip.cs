@@ -1,53 +1,63 @@
 using UnityEngine;
 using KadenZombie8.BIMOS.Rig;
 using System.Collections.Generic;
-using Riptide;
+using FishNet.Object;
+using FishNet.Connection;
+using FishNet;
+using FishNet.Transporting;
 
 namespace KadenZombie8.BIMOS.Networking {
     [RequireComponent(typeof(Grabbable))]
-    public class NetworkGrip : MonoBehaviourNetwork {
-        private static Dictionary<int, NetworkGrip> gripInstances = new Dictionary<int, NetworkGrip>();
-        public int id;
-        private Grabbable grabbable;
-
+    public class NetworkGrip : MonoBehaviour {
+        public static Dictionary<int, NetworkGrip> Instances { get; private set; } = new Dictionary<int, NetworkGrip>();
+        public static int NextId { get; private set; } = 0;
+        public List<NetworkConnection> OwnershipQueue;
+        public int Id { get; private set; }
+        public Grabbable grabbable;
+        public NetworkObject networkObject;
         private void Awake() {
-            id = gripInstances.AllocateId(this);
+            networkObject = GetComponentInParent<NetworkObject>();
+            AllocateId(this);
             grabbable = GetComponent<Grabbable>();
             grabbable.OnGrab += OnGrabbed;
+        }
+
+        public static void AllocateId(NetworkGrip networkGrip) {
+            networkGrip.Id = NextId;
+            Instances.Add(networkGrip.Id, networkGrip);
+            NextId++;
         }
 
         private void Start() {
             OnStartServer();
         }
 
-        [ClientCallback]
+        [Client]
         private void OnGrabbed() {
             SendGripTakeover();
         }
 
-        [ClientCallback]
+        [Client]
         private void SendGripTakeover() {
-            Message message = Message.Create(MessageSendMode.Reliable, (ushort)ServerMessages.GripTakeover);
-            message.Add(new GripTakeover(id));
-            Network.Client.Send(message);
+            InstanceFinder.ClientManager.Broadcast(new GripTakeover(Id));
         }
 
-        [ServerCallback]
+        [Server]
         private void OnStartServer() {
-            if (Network.Client.IsConnected) {
-                View.GiveOwnership(Network.Client.Connection.Id);
+            InstanceFinder.ServerManager.RegisterBroadcast<GripTakeover>(ServerGripTakeover);
+            if (InstanceFinder.IsClientStarted) {
+                networkObject.GiveOwnership(InstanceFinder.ClientManager.Connection);
             }
         }
 
-        [ServerCallback, MessageHandler((ushort)ServerMessages.GripTakeover)]
-        internal static void ServerGripTakeover(Connection conn, Message message) {
-            var grip = message.GetSerializable<GripTakeover>();
-            var networkObject = gripInstances[grip.netId].View;
-            if (networkObject.Owner == conn.Id)
+        [Server]
+        internal static void ServerGripTakeover(NetworkConnection conn, GripTakeover handler, Channel channel) {
+            var grip = handler;
+            var identity = Instances[grip.netId].networkObject;
+            if (identity.Owner == conn)
                 return;
-            networkObject.RemoveOwnership();
-            networkObject.GiveOwnership(conn.Id);
-            ;
+            identity.RemoveOwnership(false);
+            identity.GiveOwnership(conn);
         }
     }
 }
