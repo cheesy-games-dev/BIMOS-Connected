@@ -1,7 +1,7 @@
 using UnityEngine;
-using Mirror;
 using System.Collections.Generic;
 using System;
+using Fusion;
 
 namespace KadenZombie8.BIMOS.Networking {
     [DefaultExecutionOrder(1000)]
@@ -11,9 +11,12 @@ namespace KadenZombie8.BIMOS.Networking {
             Refresh();
         }
         public void Refresh() {
-            Predicate<VisibleObject> enablePredicate = x => (x.showOn.HasFlag(Targets.Server) && isServer) || (x.showOn.HasFlag(Targets.Clients) && isClient) || (x.showOn.HasFlag(Targets.Owner) && isOwned);
+            bool isHost = BIMOSNetworkRunner.Instance.IsHost;
+            bool isClient = BIMOSNetworkRunner.Instance.IsClient;
+            bool isOwner = HasStateAuthority;
+            Predicate<VisibleObject> enablePredicate = x => (x.showOn.HasFlag(Targets.Server) && Runner.IsSharedModeMasterClient) || (x.showOn.HasFlag(Targets.Clients) && isClient) || (x.showOn.HasFlag(Targets.Owner) && isOwner);
             references.FindAll(enablePredicate).ForEach(Enable);
-            Predicate<VisibleObject> disablePredicate = x => (x.showOn.HasFlag(Targets.Server) && !isServer) || (x.showOn.HasFlag(Targets.Clients) && !isClient) || (x.showOn.HasFlag(Targets.Owner) && !isOwned);
+            Predicate<VisibleObject> disablePredicate = x => (x.showOn.HasFlag(Targets.Server) && !isHost) || (x.showOn.HasFlag(Targets.Clients) && !isClient) || (x.showOn.HasFlag(Targets.Owner) && !isOwner);
             references.FindAll(disablePredicate).ForEach(Disable);
         }
 
