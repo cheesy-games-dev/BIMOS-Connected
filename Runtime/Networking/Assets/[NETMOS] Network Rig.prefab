@@ -2690,31 +2690,34 @@ PrefabInstance:
       addedObject: {fileID: 7579424735372966158}
     - targetCorrespondingSourceObject: {fileID: 3169780607551956412, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3335227775693449538}
+      addedObject: {fileID: -2640216731569864035}
+    - targetCorrespondingSourceObject: {fileID: 3169780607551956412, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 429951151376168914}
     - targetCorrespondingSourceObject: {fileID: 2375750912006841374, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5224572012336966446}
+      addedObject: {fileID: 1138501924028880632}
     - targetCorrespondingSourceObject: {fileID: 4798193701684832079, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2860005599853050156}
+      addedObject: {fileID: 8929561845163253991}
     - targetCorrespondingSourceObject: {fileID: 4272984985020779467, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7590888708051457169}
+      addedObject: {fileID: 2150720023445197282}
     - targetCorrespondingSourceObject: {fileID: 1770814561973506831, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7908467984749725238}
+      addedObject: {fileID: 8852543601621343076}
     - targetCorrespondingSourceObject: {fileID: 3812682066745618323, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
       insertIndex: -1
       addedObject: {fileID: 287996372707819107}
     - targetCorrespondingSourceObject: {fileID: 3812682066745618323, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2303003596150635554}
+      addedObject: {fileID: 7452801963461029032}
     - targetCorrespondingSourceObject: {fileID: 3301374950904824340, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8478381510231925781}
     - targetCorrespondingSourceObject: {fileID: 3301374950904824340, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5225821418687187188}
+      addedObject: {fileID: 285294718202363433}
   m_SourcePrefab: {fileID: 100100000, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
 --- !u!4 &240614798042122997 stripped
 Transform:
@@ -2759,7 +2762,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1770814561973506831, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
   m_PrefabInstance: {fileID: 264838584189060137}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7908467984749725238
+--- !u!114 &8852543601621343076
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2768,20 +2771,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 1963524616411223846}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a591d221a634417e9827eb58e17de84, type: 3}
+  m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stateAuthorityChangeErrorCorrectionDelta: 0
-  SyncScale: 0
-  SyncParent: 1
-  _interpolationTarget: {fileID: 0}
-  UsePreciseRotation: 0
-  UseRenderSleepThresholds: 1
-  RenderThresholds:
-    UseEnergy: 1
-    Position: 0.01
-    Rotation: 0.01
-    Scale: 0.01
+  _componentIndexCache: 5
+  _addedNetworkObject: {fileID: 429951151376168914}
+  _networkObjectCache: {fileID: 429951151376168914}
+  _componentConfiguration: 2
+  _synchronizeParent: 0
+  _packing:
+    Position: 2
+    Rotation: 2
+    Scale: 0
+  _useScaledTime: 1
+  _interpolation: 2
+  _extrapolation: 2
+  _enableTeleport: 1
+  _teleportThreshold: 1
+  _clientAuthoritative: 1
+  _sendToOwner: 1
+  _interval: 1
+  _synchronizePosition: 1
+  _positionSensitivity: 0.001
+  _positionSnapping:
+    X: 0
+    Y: 0
+    Z: 0
+  _synchronizeRotation: 1
+  _rotationSnapping:
+    X: 0
+    Y: 0
+    Z: 0
+  _synchronizeScale: 1
+  _scaleSensitivity: 0.001
+  _scaleSnapping:
+    X: 0
+    Y: 0
+    Z: 0
 --- !u!1 &2420107479358163573 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2466028264708165212, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
@@ -2792,7 +2818,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2375750912006841374, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
   m_PrefabInstance: {fileID: 264838584189060137}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5224572012336966446
+--- !u!114 &1138501924028880632
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2801,20 +2827,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 2545863734770950199}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a591d221a634417e9827eb58e17de84, type: 3}
+  m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stateAuthorityChangeErrorCorrectionDelta: 0
-  SyncScale: 0
-  SyncParent: 1
-  _interpolationTarget: {fileID: 0}
-  UsePreciseRotation: 0
-  UseRenderSleepThresholds: 1
-  RenderThresholds:
-    UseEnergy: 1
-    Position: 0.01
-    Rotation: 0.01
-    Scale: 0.01
+  _componentIndexCache: 2
+  _addedNetworkObject: {fileID: 429951151376168914}
+  _networkObjectCache: {fileID: 429951151376168914}
+  _componentConfiguration: 2
+  _synchronizeParent: 0
+  _packing:
+    Position: 2
+    Rotation: 2
+    Scale: 0
+  _useScaledTime: 1
+  _interpolation: 2
+  _extrapolation: 2
+  _enableTeleport: 1
+  _teleportThreshold: 1
+  _clientAuthoritative: 1
+  _sendToOwner: 1
+  _interval: 1
+  _synchronizePosition: 1
+  _positionSensitivity: 0.001
+  _positionSnapping:
+    X: 0
+    Y: 0
+    Z: 0
+  _synchronizeRotation: 1
+  _rotationSnapping:
+    X: 0
+    Y: 0
+    Z: 0
+  _synchronizeScale: 1
+  _scaleSensitivity: 0.001
+  _scaleSnapping:
+    X: 0
+    Y: 0
+    Z: 0
 --- !u!1 &2905305412102676885 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3169780607551956412, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
@@ -2845,6 +2894,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00b8bb45c667d0142b48f85c670ada24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: kadenzombie8.bimos.networking::KadenZombie8.BIMOS.Networking.ObjectVisibility
+  _componentIndexCache: 0
+  _addedNetworkObject: {fileID: 429951151376168914}
+  _networkObjectCache: {fileID: 429951151376168914}
   references:
   - obj: {fileID: 3478676864685901636}
     showOn: 2
@@ -2856,7 +2908,7 @@ MonoBehaviour:
     showOn: 2
   - obj: {fileID: 8792475544439703967}
     showOn: 1
---- !u!114 &3335227775693449538
+--- !u!114 &-2640216731569864035
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2865,22 +2917,72 @@ MonoBehaviour:
   m_GameObject: {fileID: 2905305412102676885}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Script: {fileID: 11500000, guid: c60b56f12362a264b9deebf69a9896b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SortKey: 2714320216
-  ObjectInterest: 1
-  Flags: 262145
-  NestedObjects: []
-  NetworkedBehaviours:
+  _componentIndexCache: 1
+  _addedNetworkObject: {fileID: 429951151376168914}
+  _networkObjectCache: {fileID: 429951151376168914}
+--- !u!114 &429951151376168914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2905305412102676885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26b716c41e9b56b4baafaf13a523ba2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <IsNested>k__BackingField: 0
+  WasActiveDuringEdit: 0
+  WasActiveDuringEdit_Set1: 1
+  <ComponentIndex>k__BackingField: 0
+  <PredictedSpawn>k__BackingField: {fileID: 0}
+  <PredictedOwner>k__BackingField: {fileID: 0}
+  NetworkBehaviours:
   - {fileID: 7579424735372966158}
-  - {fileID: 5224572012336966446}
-  - {fileID: 2860005599853050156}
-  - {fileID: 7590888708051457169}
-  - {fileID: 7908467984749725238}
-  - {fileID: 2303003596150635554}
-  - {fileID: 5225821418687187188}
-  ForceRemoteRenderTimeframe: 0
+  - {fileID: -2640216731569864035}
+  - {fileID: 1138501924028880632}
+  - {fileID: 8929561845163253991}
+  - {fileID: 2150720023445197282}
+  - {fileID: 8852543601621343076}
+  - {fileID: 7452801963461029032}
+  - {fileID: 285294718202363433}
+  InitializedParentNetworkBehaviour: {fileID: 0}
+  InitializedNestedNetworkObjects: []
+  RuntimeParentNetworkBehaviour: {fileID: 0}
+  RuntimeChildNetworkBehaviours: []
+  _isNetworked: 1
+  _isSpawnable: 1
+  _isGlobal: 0
+  _initializeOrder: 0
+  _preventDespawnOnDisconnect: 0
+  _defaultDespawnType: 0
+  NetworkObserver: {fileID: 0}
+  _enablePrediction: 0
+  _predictionType: 0
+  _graphicalObject: {fileID: 0}
+  _detachGraphicalObject: 0
+  _enableStateForwarding: 1
+  _networkTransform: {fileID: 0}
+  _ownerInterpolation: 1
+  _ownerSmoothedProperties: 255
+  _adaptiveInterpolation: 3
+  _spectatorSmoothedProperties: 255
+  _spectatorInterpolation: 2
+  _enableTeleport: 0
+  _teleportThreshold: 1
+  <PrefabId>k__BackingField: 12
+  <SpawnableCollectionId>k__BackingField: 0
+  <AssetPathHash>k__BackingField: 3337504377432289208
+  <SceneId>k__BackingField: 0
+  SerializedTransformProperties:
+    Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: 0, z: 0, w: 1}
+    Scale: {x: 1, y: 1, z: 1}
+    IsValid: 1
 --- !u!1 &3349607528184284733 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3301374950904824340, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
@@ -2906,7 +3008,7 @@ MonoBehaviour:
   InteractableLayer:
     serializedVersion: 2
     m_Bits: 2048
---- !u!114 &5225821418687187188
+--- !u!114 &285294718202363433
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2915,20 +3017,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 3349607528184284733}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a591d221a634417e9827eb58e17de84, type: 3}
+  m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stateAuthorityChangeErrorCorrectionDelta: 0
-  SyncScale: 0
-  SyncParent: 1
-  _interpolationTarget: {fileID: 0}
-  UsePreciseRotation: 0
-  UseRenderSleepThresholds: 1
-  RenderThresholds:
-    UseEnergy: 1
-    Position: 0.01
-    Rotation: 0.01
-    Scale: 0.01
+  _componentIndexCache: 7
+  _addedNetworkObject: {fileID: 429951151376168914}
+  _networkObjectCache: {fileID: 429951151376168914}
+  _componentConfiguration: 2
+  _synchronizeParent: 0
+  _packing:
+    Position: 2
+    Rotation: 2
+    Scale: 0
+  _useScaledTime: 1
+  _interpolation: 2
+  _extrapolation: 2
+  _enableTeleport: 1
+  _teleportThreshold: 1
+  _clientAuthoritative: 1
+  _sendToOwner: 1
+  _interval: 1
+  _synchronizePosition: 1
+  _positionSensitivity: 0.001
+  _positionSnapping:
+    X: 0
+    Y: 0
+    Z: 0
+  _synchronizeRotation: 1
+  _rotationSnapping:
+    X: 0
+    Y: 0
+    Z: 0
+  _synchronizeScale: 1
+  _scaleSensitivity: 0.001
+  _scaleSnapping:
+    X: 0
+    Y: 0
+    Z: 0
 --- !u!1 &3478676864685901636 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3740902940346483565, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
@@ -2959,7 +3084,7 @@ MonoBehaviour:
   InteractableLayer:
     serializedVersion: 2
     m_Bits: 2048
---- !u!114 &2303003596150635554
+--- !u!114 &7452801963461029032
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2968,26 +3093,49 @@ MonoBehaviour:
   m_GameObject: {fileID: 3982795507821439930}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a591d221a634417e9827eb58e17de84, type: 3}
+  m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stateAuthorityChangeErrorCorrectionDelta: 0
-  SyncScale: 0
-  SyncParent: 1
-  _interpolationTarget: {fileID: 0}
-  UsePreciseRotation: 0
-  UseRenderSleepThresholds: 1
-  RenderThresholds:
-    UseEnergy: 1
-    Position: 0.01
-    Rotation: 0.01
-    Scale: 0.01
+  _componentIndexCache: 6
+  _addedNetworkObject: {fileID: 429951151376168914}
+  _networkObjectCache: {fileID: 429951151376168914}
+  _componentConfiguration: 2
+  _synchronizeParent: 0
+  _packing:
+    Position: 2
+    Rotation: 2
+    Scale: 0
+  _useScaledTime: 1
+  _interpolation: 2
+  _extrapolation: 2
+  _enableTeleport: 1
+  _teleportThreshold: 1
+  _clientAuthoritative: 1
+  _sendToOwner: 1
+  _interval: 1
+  _synchronizePosition: 1
+  _positionSensitivity: 0.001
+  _positionSnapping:
+    X: 0
+    Y: 0
+    Z: 0
+  _synchronizeRotation: 1
+  _rotationSnapping:
+    X: 0
+    Y: 0
+    Z: 0
+  _synchronizeScale: 1
+  _scaleSensitivity: 0.001
+  _scaleSnapping:
+    X: 0
+    Y: 0
+    Z: 0
 --- !u!1 &4098368562791829474 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4272984985020779467, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
   m_PrefabInstance: {fileID: 264838584189060137}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7590888708051457169
+--- !u!114 &2150720023445197282
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2996,26 +3144,49 @@ MonoBehaviour:
   m_GameObject: {fileID: 4098368562791829474}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a591d221a634417e9827eb58e17de84, type: 3}
+  m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stateAuthorityChangeErrorCorrectionDelta: 0
-  SyncScale: 0
-  SyncParent: 1
-  _interpolationTarget: {fileID: 0}
-  UsePreciseRotation: 0
-  UseRenderSleepThresholds: 1
-  RenderThresholds:
-    UseEnergy: 1
-    Position: 0.01
-    Rotation: 0.01
-    Scale: 0.01
+  _componentIndexCache: 4
+  _addedNetworkObject: {fileID: 429951151376168914}
+  _networkObjectCache: {fileID: 429951151376168914}
+  _componentConfiguration: 2
+  _synchronizeParent: 0
+  _packing:
+    Position: 2
+    Rotation: 2
+    Scale: 0
+  _useScaledTime: 1
+  _interpolation: 2
+  _extrapolation: 2
+  _enableTeleport: 1
+  _teleportThreshold: 1
+  _clientAuthoritative: 1
+  _sendToOwner: 1
+  _interval: 1
+  _synchronizePosition: 1
+  _positionSensitivity: 0.001
+  _positionSnapping:
+    X: 0
+    Y: 0
+    Z: 0
+  _synchronizeRotation: 1
+  _rotationSnapping:
+    X: 0
+    Y: 0
+    Z: 0
+  _synchronizeScale: 1
+  _scaleSensitivity: 0.001
+  _scaleSnapping:
+    X: 0
+    Y: 0
+    Z: 0
 --- !u!1 &4700208755958670182 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4798193701684832079, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
   m_PrefabInstance: {fileID: 264838584189060137}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2860005599853050156
+--- !u!114 &8929561845163253991
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3024,20 +3195,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 4700208755958670182}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a591d221a634417e9827eb58e17de84, type: 3}
+  m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stateAuthorityChangeErrorCorrectionDelta: 0
-  SyncScale: 0
-  SyncParent: 1
-  _interpolationTarget: {fileID: 0}
-  UsePreciseRotation: 0
-  UseRenderSleepThresholds: 1
-  RenderThresholds:
-    UseEnergy: 1
-    Position: 0.01
-    Rotation: 0.01
-    Scale: 0.01
+  _componentIndexCache: 3
+  _addedNetworkObject: {fileID: 429951151376168914}
+  _networkObjectCache: {fileID: 429951151376168914}
+  _componentConfiguration: 2
+  _synchronizeParent: 0
+  _packing:
+    Position: 2
+    Rotation: 2
+    Scale: 0
+  _useScaledTime: 1
+  _interpolation: 2
+  _extrapolation: 2
+  _enableTeleport: 1
+  _teleportThreshold: 1
+  _clientAuthoritative: 1
+  _sendToOwner: 1
+  _interval: 1
+  _synchronizePosition: 1
+  _positionSensitivity: 0.001
+  _positionSnapping:
+    X: 0
+    Y: 0
+    Z: 0
+  _synchronizeRotation: 1
+  _rotationSnapping:
+    X: 0
+    Y: 0
+    Z: 0
+  _synchronizeScale: 1
+  _scaleSensitivity: 0.001
+  _scaleSnapping:
+    X: 0
+    Y: 0
+    Z: 0
 --- !u!4 &6112504805103877526 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6304793145192069567, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}

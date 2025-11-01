@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 492b88dd0e9c4ae40bd8a7b719ca0e9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: kadenzombie8.bimos.networking::KadenZombie8.BIMOS.Networking.BIMOSManager
-  runnerPrefab: {fileID: 4419998149766275807, guid: 5559d088dc031d84c90cb3eccccd0d65, type: 3}
+  RigPrefab: {fileID: -2640216731569864035, guid: 67f90e909f47fc24dbd9ee70c6822b7e, type: 3}
+  DynamicSpawn: 0
