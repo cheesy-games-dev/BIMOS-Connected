@@ -8,6 +8,8 @@ namespace KadenZombie8.BIMOS.Networking
         }
 
         protected override void Enable(VisibleObject @object) {
+            if (!@object.showOnAuth)
+                return;
             @object.obj.SetActive(true);
         }
     }

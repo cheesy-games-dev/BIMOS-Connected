@@ -1,16 +1,14 @@
 using UnityEngine;
 using KadenZombie8.BIMOS.Rig;
 using System.Collections.Generic;
-using FishNet.Connection;
-using FishNet.Object;
-using System;
+using Mirror;
 
 namespace KadenZombie8.BIMOS.Networking {
     [RequireComponent(typeof(Grabbable))]
-    public class NetworkGrip : NetworkBehaviour {
+    public class NetworkGrip : OwnershipAutoAssigner {
         public static Dictionary<int, NetworkGrip> Instances { get; private set; } = new Dictionary<int, NetworkGrip>();
         public static int NextId { get; private set; } = 0;
-        public List<NetworkConnection> OwnershipQueue { get; private set; } = new();
+        public List<NetworkConnectionToClient> OwnershipQueue { get; private set; } = new();
         public Grabbable grabbable;
         private void Awake() {
             grabbable = GetComponent<Grabbable>();
@@ -19,29 +17,31 @@ namespace KadenZombie8.BIMOS.Networking {
         }
         [Client]
         private void OnGrabbed() {
-            SendGripTakeoverRpc();
+            SendGripTakeoverCmd();
         }
         [Client]
         private void OnReleased() {
-            SendGripReleaseRpc();
+            SendGripReleaseCmd();
         }
 
-        [ServerRpc(RequireOwnership = false)]
-        private void SendGripTakeoverRpc(NetworkConnection conn = null) {
-            OwnershipQueue.Add(conn);
+        [Command(requiresAuthority = false)]
+        private void SendGripTakeoverCmd(NetworkConnectionToClient conn = null) {
+            if (!OwnershipQueue.Contains(conn))
+                OwnershipQueue.Add(conn);
             AssignOwnership();
         }
-        [ServerRpc(RequireOwnership = false)]
-        private void SendGripReleaseRpc(NetworkConnection conn = null) {
-            OwnershipQueue.Remove(conn);
+        [Command(requiresAuthority = false)]
+        private void SendGripReleaseCmd(NetworkConnectionToClient conn = null) {
+            if(OwnershipQueue.Contains(conn)) OwnershipQueue.Remove(conn);
             AssignOwnership();
         }
-       
+
+        [Server]
         private void AssignOwnership() {
-            if (Owner == OwnershipQueue[0] || OwnershipQueue.Count <= 0)
+            if (OwnershipQueue.Count <= 0 || connectionToClient == OwnershipQueue[0])
                 return;
-            RemoveOwnership();
-            GiveOwnership(OwnershipQueue[0]);
+            netIdentity.RemoveClientAuthority();
+            netIdentity.AssignClientAuthority(OwnershipQueue[0]);
         }
     }
 }

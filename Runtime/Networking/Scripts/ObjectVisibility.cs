@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System;
-using FishNet.Object;
+using Mirror;
 
 namespace KadenZombie8.BIMOS.Networking {
     [DefaultExecutionOrder(1000)]
@@ -11,11 +11,9 @@ namespace KadenZombie8.BIMOS.Networking {
             Refresh();
         }
         public void Refresh() {
-            bool isHost = IsServerStarted;
-            bool isClient = IsClientStarted;
-            bool isOwner = IsOwner;
-            Predicate<VisibleObject> enablePredicate = x => (x.showOn.HasFlag(Targets.Server) && isHost) || (x.showOn.HasFlag(Targets.Clients) && isClient) || (x.showOn.HasFlag(Targets.Owner) && isOwner);
-            references.FindAll(enablePredicate).ForEach(Enable);
+            bool isHost = isServer;
+            bool isClient = this.isClient;
+            bool isOwner = isOwned;
             Predicate<VisibleObject> disablePredicate = x => (x.showOn.HasFlag(Targets.Server) && !isHost) || (x.showOn.HasFlag(Targets.Clients) && !isClient) || (x.showOn.HasFlag(Targets.Owner) && !isOwner);
             references.FindAll(disablePredicate).ForEach(Disable);
         }
@@ -26,6 +24,7 @@ namespace KadenZombie8.BIMOS.Networking {
         [Serializable]
         public struct VisibleObject {
             public T obj;
+            public bool showOnAuth;
             public Targets showOn;
         }
 

@@ -1,5 +1,5 @@
-using FishNet.Object;
 using KadenZombie8.BIMOS.Rig;
+using Mirror;
 using UnityEngine;
 
 namespace KadenZombie8.BIMOS.Networking
@@ -7,19 +7,19 @@ namespace KadenZombie8.BIMOS.Networking
     [DefaultExecutionOrder(-2)]
     public class NetworkRig : NetworkBehaviour
     {
-        Networking.NetworkManager networkManager;
+        [SyncVar] public NetworkRigInfo RigInfo;
+
         BIMOSRig rig;
         private void Awake() {
             rig = GetComponent<BIMOSRig>();
             rig.enabled = false;
-            networkManager = Networking.NetworkManager.Instance;
-            networkManager.RigCache.Add(Owner, this);
+            syncDirection = SyncDirection.ServerToClient;
         }
 
         public override void OnStartClient() {
-            if (IsOwner) {
+            if (isLocalPlayer) {
                 rig.enabled = true;
-                networkManager.LocalRig = this;
+                NetworkManager.singleton.LocalRig = this;
             }
             else {
                 rig.ControllerRig.SetActive(false);
