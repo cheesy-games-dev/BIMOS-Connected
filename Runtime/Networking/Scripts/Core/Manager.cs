@@ -32,7 +32,7 @@ namespace KadenZombie8.BIMOS.Networking {
         }
         private void InitializeOnce() {
             singleton = this;
-            int layer = LayerMask.GetMask("Player", "BIMOSRig");
+            int layer = LayerMask.GetMask("BIMOSRig");
             Physics.IgnoreLayerCollision(layer, layer, true);
         }
         private void Start() {

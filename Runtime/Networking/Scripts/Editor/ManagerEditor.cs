@@ -12,16 +12,24 @@ namespace KadenZombie8.BIMOS.Networking
         public override void OnInspectorGUI() {
             base.OnInspectorGUI();
             EditorGUI.BeginDisabledGroup(!Application.IsPlaying(target));
-            if (GUILayout.Button("Start Host")) {
-                InstanceFinder.ServerManager.StartConnection();
-                InstanceFinder.ClientManager.StartConnection();
+            if (InstanceFinder.IsOffline) {
+                if (GUILayout.Button("Start Host")) {
+                    InstanceFinder.ServerManager.StartConnection();
+                    InstanceFinder.ClientManager.StartConnection();
+                }
+                if (GUILayout.Button("Start Server")) {
+                    InstanceFinder.ServerManager.StartConnection();
+                }
+                address = EditorGUILayout.TextField("Address", address);
+                if (GUILayout.Button("Start Client")) {
+                    InstanceFinder.ClientManager.StartConnection(address);
+                }
             }
-            if (GUILayout.Button("Start Server")) {
-                InstanceFinder.ServerManager.StartConnection();
-            }
-            address = EditorGUILayout.TextField("Address", address);
-            if (GUILayout.Button("Start Client")) {
-                InstanceFinder.ClientManager.StartConnection(address);
+            else {
+                if (GUILayout.Button("Shutdown")) {
+                    InstanceFinder.ClientManager.StopConnection();
+                    InstanceFinder.ServerManager.StopConnection(true);
+                }
             }
             EditorGUI.EndDisabledGroup();
         }
