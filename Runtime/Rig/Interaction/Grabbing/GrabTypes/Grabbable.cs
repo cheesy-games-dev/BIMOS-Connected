@@ -1,13 +1,14 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace KadenZombie8.BIMOS.Rig
 {
     public abstract class Grabbable : MonoBehaviour
     {
-        public event Action OnGrab;
-        public event Action OnRelease;
+        public UnityEvent OnGrab;
+        public UnityEvent OnRelease;
         public HandPose HandPose;
 
         [HideInInspector]
@@ -55,6 +56,8 @@ namespace KadenZombie8.BIMOS.Rig
                 return 1f/1000f;
 
             AlignHand(hand, out var position, out var rotation);
+            if (position == hand.PalmTransform.position && rotation == hand.PalmTransform.rotation)
+                return 0f;
 
             var positionDifference = Mathf.Min(
                 Vector3.Distance(hand.PalmTransform.position, position), 0.2f)
@@ -141,6 +144,7 @@ namespace KadenZombie8.BIMOS.Rig
             var rotationDifference = Quaternion.Angle(initialRotation, rotation) / 180f;
             var averageDifference = Mathf.Min(positionDifference + rotationDifference, 1f);
             var grabTime = MaxGrabTime * averageDifference;
+            hand.SendHapticImpulse(0.05f, grabTime);
             while (elapsedTime < grabTime)
             {
                 if (!grabJoint)
@@ -155,6 +159,7 @@ namespace KadenZombie8.BIMOS.Rig
                 elapsedTime += Time.fixedDeltaTime;
                 yield return new WaitForFixedUpdate();
             }
+            hand.SendHapticImpulse(0.2f, 0.05f);
 
             if (!grabJoint)
                 yield break;
