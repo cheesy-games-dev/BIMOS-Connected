@@ -12,15 +12,17 @@ namespace BIMOS.Editor
     {
         public override void OnInspectorGUI () {
             base.OnInspectorGUI ();
-            var grabbable = (Grabbable)target;
-            bool hasNetworkGrip = grabbable.GetComponent<NetworkGrip>();
-            if (!hasNetworkGrip) {
-                if (GUILayout.Button("Add Network Grip")) {
-                    grabbable.AddComponent<NetworkGrip>();
-                    EditorUtility.SetDirty(target);
-                    AssetDatabase.SaveAssetIfDirty(target);
+            foreach (var target in targets) {
+                var grabbable = (Grabbable)target;
+                bool hasNetworkGrip = grabbable.GetComponent<NetworkGrip>();
+                if (!hasNetworkGrip) {
+                    if (GUILayout.Button("Add Network Grip")) {
+                        grabbable.AddComponent<NetworkGrip>();
+                        EditorUtility.SetDirty(target);
+                        AssetDatabase.SaveAssetIfDirty(target);
+                    }
                 }
-            }        
+            }
         }
     }
 }
