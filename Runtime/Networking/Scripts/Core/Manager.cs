@@ -25,8 +25,9 @@ namespace KadenZombie8.BIMOS.Networking {
             "True: New Clients spawn at the Servers last spawn point\n" +
             "False: New Clients spawn at the Servers first spawn point")]
         public bool DynamicSpawn;
-        [Tooltip("Rig Info:\n" +
-           "Local Rig Info the Client sends to the Server")]
+        [Tooltip("Auto Host:\n" +
+           "Create Server when Game Loads")]
+        public bool AutoHost = true;
         private void Awake() {
             InitializeOnce();
         }
@@ -37,6 +38,10 @@ namespace KadenZombie8.BIMOS.Networking {
         }
         private void Start() {
             _defaultSpawnPoint = SpawnPointManager.Instance.SpawnPoint.transform;
+            if (AutoHost) {
+                InstanceFinder.ServerManager.StartConnection();
+                InstanceFinder.ClientManager.StartConnection();
+            }
             InstanceFinder.SceneManager.OnClientLoadedStartScenes += OnCreateRig;
         }
 

@@ -66,3 +66,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: kadenzombie8.bimos.networking::KadenZombie8.BIMOS.Networking.BIMOSManager
   RigPrefab: {fileID: -2640216731569864035, guid: 67f90e909f47fc24dbd9ee70c6822b7e, type: 3}
   DynamicSpawn: 0
+  AutoHost: 1
