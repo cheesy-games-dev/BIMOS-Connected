@@ -33,14 +33,15 @@ namespace KadenZombie8.BIMOS.Networking {
             Singleton = this;
             int layer = LayerMask.GetMask("BIMOSRig");
             Physics.IgnoreLayerCollision(layer, layer, true);
-        }
-        public override void Start() {
-            _defaultSpawnPoint = SpawnPointManager.Instance.SpawnPoint.transform;
-            playerPrefab = null;
-            autoCreatePlayer = true;
             if (AutoHost) {
                 StartHost();
             }
+        }
+        public override void OnStartServer() {
+            base.OnStartServer();
+            _defaultSpawnPoint = SpawnPointManager.Instance.SpawnPoint.transform;
+            playerPrefab = null;
+            autoCreatePlayer = true;        
             NetworkServer.ReplaceHandler<AddPlayerMessage>((x, y) => OnServerAddPlayer(x));
         }
 
