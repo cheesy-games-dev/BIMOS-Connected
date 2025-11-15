@@ -1,4 +1,4 @@
-using FishNet.Component.Transforming;
+using Mirror;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -45,12 +45,6 @@ namespace KadenZombie8.BIMOS
             _player.AnimationRig.Feet.TeleportFeet();
 
             _player.ControllerRig.transform.rotation = spawnPoint.rotation;
-            try {
-                _player.PhysicsRig.LocomotionSphere.GetComponent<NetworkTransform>()?.Teleport();
-            }
-            catch {
-                Debug.Log("Could not use NetworkTransform Teleport");
-            }
             return spawnPoint;
         }
     }

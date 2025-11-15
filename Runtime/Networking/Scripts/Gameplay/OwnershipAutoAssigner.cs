@@ -1,5 +1,5 @@
 using UnityEngine;
-using FishNet.Object;
+using Mirror;
 
 [DefaultExecutionOrder(-1)]
 public class OwnershipAutoAssigner : NetworkBehaviour
@@ -7,7 +7,7 @@ public class OwnershipAutoAssigner : NetworkBehaviour
     [Server]
     public override void OnStartClient() {
         base.OnStartClient();
-        NetworkObject.RemoveOwnership();
-        NetworkObject.GiveOwnership(LocalConnection);
+        netIdentity.RemoveClientAuthority();
+        netIdentity.AssignClientAuthority(NetworkServer.localConnection);
     }
 }

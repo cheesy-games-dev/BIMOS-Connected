@@ -11,7 +11,8 @@ namespace KadenZombie8.BIMOS
         public override void AlignHand(Hand hand, out Vector3 position, out Quaternion rotation) {
             var offset = hand.Handedness == Handedness.Right ? SphereCollider.radius : -SphereCollider.radius;
             position = transform.TransformPoint(hand.PalmTransform.InverseTransformPoint(hand.PhysicsHandTransform.position) - (Vector3.forward*offset));
-            rotation = transform.rotation * Quaternion.Inverse(hand.PalmTransform.rotation) * hand.PhysicsHandTransform.rotation;
+            var transformRotation = hand.Handedness == Handedness.Right ? transform.rotation : Quaternion.Inverse(transform.rotation);
+            rotation = transformRotation * Quaternion.Inverse(hand.PalmTransform.rotation) * hand.PhysicsHandTransform.rotation;
         }
     }
 }

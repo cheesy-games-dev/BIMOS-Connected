@@ -1,7 +1,4 @@
-using FishNet.CodeGenerating;
-using FishNet.Connection;
-using FishNet.Object;
-using FishNet.Object.Synchronizing;
+using Mirror;
 using KadenZombie8.BIMOS;
 using KadenZombie8.BIMOS.Rig;
 using UnityEngine;
@@ -9,22 +6,22 @@ using UnityEngine;
 public class GamemodePlayer : NetworkBehaviour
 {
     public float MaxHealth = 30;
-    [AllowMutableSyncType] public SyncVar<float> Health = new();
-    [AllowMutableSyncType] public SyncVar<uint> Kills = new();
-    [AllowMutableSyncType] public SyncVar<uint> Deaths = new();
+    [SyncVar] public float Health = new();
+    [SyncVar] public uint Kills = new();
+    [SyncVar] public uint Deaths = new();
     public BIMOSRig rig;
     public static GamemodePlayer LocalRig = new();
 
     public override void OnStartClient() {
         base.OnStartClient();
         rig ??= GetComponent<BIMOSRig>();
-        if (IsOwner) LocalRig = this;
+        if (isLocalPlayer) LocalRig = this;
     }
 
     [Server]
     public void NewDeath() {
-        Deaths.Value++;
-        Respawn(Owner);
+        Deaths++;
+        Respawn(connectionToClient);
     }
 
     [TargetRpc]
@@ -32,17 +29,17 @@ public class GamemodePlayer : NetworkBehaviour
         GamemodeMarker.SpawnPlayer(this);
     }
 
-    [ServerRpc]
+    [Command]
     public void RequestKill() {
-        Kills.Value++;
+        Kills++;
     }
 
-    [ServerRpc(RequireOwnership = false)]
+    [Command(requiresAuthority = false)]
     public void RequestDamage(float damage) {
-        Health.Value -= damage;
-        if (Health.Value <= 0) {
+        Health -= damage;
+        if (Health <= 0) {
             NewDeath();
         }
-        Health.Value = Mathf.Clamp(Health.Value, 0 , MaxHealth);
+        Health = Mathf.Clamp(Health, 0 , MaxHealth);
     }
 }

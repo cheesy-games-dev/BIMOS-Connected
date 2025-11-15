@@ -1,5 +1,5 @@
-using FishNet.Object;
 using KadenZombie8.BIMOS.Rig;
+using Mirror;
 using System.Linq;
 using UnityEngine;
 
@@ -18,9 +18,9 @@ namespace KadenZombie8.BIMOS.Networking
         }
 
         public override void OnStartClient() {
-            if (IsOwner) {
+            if (isLocalPlayer) {
                 rig.enabled = true;
-                Manager.singleton.LocalRig = this;
+                BIMOSNetworkManager.Singleton.LocalRig = this;
             }
             else {
                 rig.ControllerRig.SetActive(false);

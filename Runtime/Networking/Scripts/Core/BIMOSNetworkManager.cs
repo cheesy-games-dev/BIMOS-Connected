@@ -1,19 +1,17 @@
-using FishNet;
-using FishNet.Connection;
-using FishNet.Object;
 using KadenZombie8.BIMOS.Rig.Spawning;
+using Mirror;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace KadenZombie8.BIMOS.Networking {
-    public class Manager : MonoBehaviour {
-        public static Manager singleton {
+    public class BIMOSNetworkManager : NetworkManager {
+        public static BIMOSNetworkManager Singleton {
             get; private set;
         }
         public NetworkRig LocalRig {
             get; internal set;
         }
-        public Dictionary<NetworkConnection, NetworkRig> RigCache {
+        public Dictionary<NetworkConnectionToClient, NetworkRig> RigCache {
             get; internal set;
         }
         private Transform _defaultSpawnPoint;
@@ -28,28 +26,29 @@ namespace KadenZombie8.BIMOS.Networking {
         [Tooltip("Auto Host:\n" +
            "Create Server when Game Loads")]
         public bool AutoHost = true;
-        private void Awake() {
+        public override void Awake() {
             InitializeOnce();
         }
         private void InitializeOnce() {
-            singleton = this;
+            Singleton = this;
             int layer = LayerMask.GetMask("BIMOSRig");
             Physics.IgnoreLayerCollision(layer, layer, true);
         }
-        private void Start() {
+        public override void Start() {
             _defaultSpawnPoint = SpawnPointManager.Instance.SpawnPoint.transform;
+            playerPrefab = null;
+            autoCreatePlayer = true;
             if (AutoHost) {
-                InstanceFinder.ServerManager.StartConnection();
-                InstanceFinder.ClientManager.StartConnection();
+                StartHost();
             }
-            InstanceFinder.SceneManager.OnClientLoadedStartScenes += OnCreateRig;
+            NetworkServer.ReplaceHandler<AddPlayerMessage>((x, y) => OnServerAddPlayer(x));
         }
 
         [Server]
-        private void OnCreateRig(NetworkConnection conn, bool asServer) {
-            Transform spawn = DynamicSpawn ? SpawnPointManager.Instance.SpawnPoint.transform:_defaultSpawnPoint;
-            NetworkObject nob = InstanceFinder.NetworkManager.GetPooledInstantiated(RigPrefab, spawn.position, spawn.rotation, true);
-            InstanceFinder.ServerManager.Spawn(nob, conn);
+        public override void OnServerAddPlayer(NetworkConnectionToClient conn) {
+            Transform spawn = DynamicSpawn ? SpawnPointManager.Instance.SpawnPoint.transform : _defaultSpawnPoint;
+            var gameobject = Instantiate(RigPrefab, spawn.position, spawn.rotation).gameObject;
+            NetworkServer.AddPlayerForConnection(conn, gameobject);
         }
     }
 }

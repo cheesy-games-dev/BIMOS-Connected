@@ -2962,26 +2962,43 @@ PrefabInstance:
       addedObject: {fileID: -2640216731569864035}
     - targetCorrespondingSourceObject: {fileID: 3169780607551956412, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4275164164498893130}
+      addedObject: {fileID: 2201577147256589417}
     - targetCorrespondingSourceObject: {fileID: 2375750912006841374, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 9135697733404692405}
+      addedObject: {fileID: 1702335548058766709}
+    - targetCorrespondingSourceObject: {fileID: 2375750912006841374, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9123165454703676759}
     - targetCorrespondingSourceObject: {fileID: 4798193701684832079, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7374787806262280727}
+      addedObject: {fileID: 3240779692885390727}
     - targetCorrespondingSourceObject: {fileID: 4272984985020779467, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 320393840428118940}
+      addedObject: {fileID: 4433187696820650456}
     - targetCorrespondingSourceObject: {fileID: 1770814561973506831, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3790131856259189161}
+      addedObject: {fileID: 271971339564852748}
+    - targetCorrespondingSourceObject: {fileID: 2940052044353419808, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1923770946650985447}
     - targetCorrespondingSourceObject: {fileID: 3812682066745618323, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3961073560503842362}
+      addedObject: {fileID: 1768507106870367071}
+    - targetCorrespondingSourceObject: {fileID: 2313343773128245683, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5285946136525372835}
     - targetCorrespondingSourceObject: {fileID: 3301374950904824340, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6441420655391226545}
+      addedObject: {fileID: 5608359314541237093}
+    - targetCorrespondingSourceObject: {fileID: 5090928283351871714, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 33621296229085626}
   m_SourcePrefab: {fileID: 100100000, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
+--- !u!4 &240614798042122997 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 70422243505131228, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
+  m_PrefabInstance: {fileID: 264838584189060137}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1245661104199515586 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1361669725724948971, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
@@ -2998,7 +3015,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1770814561973506831, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
   m_PrefabInstance: {fileID: 264838584189060137}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3790131856259189161
+--- !u!114 &271971339564852748
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3007,43 +3024,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 1963524616411223846}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
+  m_Script: {fileID: 11500000, guid: a553cb17010b2403e8523b558bffbc14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 5
-  _addedNetworkObject: {fileID: 4275164164498893130}
-  _networkObjectCache: {fileID: 4275164164498893130}
-  _componentConfiguration: 2
-  _synchronizeParent: 0
-  _packing:
-    Position: 1
-    Rotation: 1
-    Scale: 0
-  _useScaledTime: 1
-  _interpolation: 2
-  _extrapolation: 2
-  _enableTeleport: 0
-  _teleportThreshold: 1
-  _clientAuthoritative: 1
-  _sendToOwner: 1
-  _interval: 1
-  _synchronizePosition: 1
-  _positionSensitivity: 0.001
-  _positionSnapping:
-    X: 0
-    Y: 0
-    Z: 0
-  _synchronizeRotation: 1
-  _rotationSnapping:
-    X: 0
-    Y: 0
-    Z: 0
-  _synchronizeScale: 1
-  _scaleSensitivity: 0.001
-  _scaleSnapping:
-    X: 0
-    Y: 0
-    Z: 0
+  syncDirection: 1
+  syncMode: 0
+  syncInterval: 0
+  target: {fileID: 4619709099495035917}
+  syncPosition: 1
+  syncRotation: 1
+  syncScale: 0
+  onlySyncOnChange: 1
+  compressRotation: 1
+  interpolatePosition: 1
+  interpolateRotation: 1
+  interpolateScale: 1
+  coordinateSpace: 0
+  timelineOffset: 1
+  showGizmos: 0
+  showOverlay: 0
+  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+  bufferResetMultiplier: 3
+  useFixedUpdate: 0
+  positionSensitivity: 0.01
+  rotationSensitivity: 0.01
+  scaleSensitivity: 0.01
+--- !u!4 &2359310465848781309 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2526819644915789268, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
+  m_PrefabInstance: {fileID: 264838584189060137}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2420107479358163573 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2466028264708165212, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
@@ -3054,7 +3064,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2375750912006841374, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
   m_PrefabInstance: {fileID: 264838584189060137}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9135697733404692405
+--- !u!114 &1702335548058766709
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3063,43 +3073,68 @@ MonoBehaviour:
   m_GameObject: {fileID: 2545863734770950199}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
+  m_Script: {fileID: 11500000, guid: a553cb17010b2403e8523b558bffbc14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 2
-  _addedNetworkObject: {fileID: 4275164164498893130}
-  _networkObjectCache: {fileID: 4275164164498893130}
-  _componentConfiguration: 2
-  _synchronizeParent: 0
-  _packing:
-    Position: 1
-    Rotation: 1
-    Scale: 0
-  _useScaledTime: 1
-  _interpolation: 2
-  _extrapolation: 2
-  _enableTeleport: 0
-  _teleportThreshold: 1
-  _clientAuthoritative: 1
-  _sendToOwner: 1
-  _interval: 1
-  _synchronizePosition: 1
-  _positionSensitivity: 0.001
-  _positionSnapping:
-    X: 0
-    Y: 0
-    Z: 0
-  _synchronizeRotation: 1
-  _rotationSnapping:
-    X: 0
-    Y: 0
-    Z: 0
-  _synchronizeScale: 1
-  _scaleSensitivity: 0.001
-  _scaleSnapping:
-    X: 0
-    Y: 0
-    Z: 0
+  syncDirection: 1
+  syncMode: 0
+  syncInterval: 0
+  target: {fileID: 2359310465848781309}
+  syncPosition: 1
+  syncRotation: 1
+  syncScale: 0
+  onlySyncOnChange: 1
+  compressRotation: 1
+  interpolatePosition: 1
+  interpolateRotation: 1
+  interpolateScale: 1
+  coordinateSpace: 0
+  timelineOffset: 1
+  showGizmos: 0
+  showOverlay: 0
+  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+  bufferResetMultiplier: 3
+  useFixedUpdate: 0
+  positionSensitivity: 0.01
+  rotationSensitivity: 0.01
+  scaleSensitivity: 0.01
+--- !u!114 &9123165454703676759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2545863734770950199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d79ff62bc96cb8e4e8d2cf7753dc0375, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  RequireAuthority: 1
+--- !u!1 &2573315351911843226 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2313343773128245683, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
+  m_PrefabInstance: {fileID: 264838584189060137}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5285946136525372835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2573315351911843226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d79ff62bc96cb8e4e8d2cf7753dc0375, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  RequireAuthority: 1
 --- !u!1 &2905305412102676885 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3169780607551956412, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
@@ -3130,13 +3165,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c60b56f12362a264b9deebf69a9896b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 1
-  _addedNetworkObject: {fileID: 4275164164498893130}
-  _networkObjectCache: {fileID: 4275164164498893130}
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   OwnerOnlyObjects:
   - {fileID: 9161604903779235079}
   - {fileID: 2420107479358163573}
---- !u!114 &4275164164498893130
+--- !u!114 &2201577147256589417
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3145,63 +3180,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 2905305412102676885}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26b716c41e9b56b4baafaf13a523ba2e, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <IsNested>k__BackingField: 0
-  WasActiveDuringEdit: 0
-  WasActiveDuringEdit_Set1: 1
-  <ComponentIndex>k__BackingField: 0
-  <PredictedSpawn>k__BackingField: {fileID: 0}
-  <PredictedOwner>k__BackingField: {fileID: 0}
-  NetworkBehaviours:
-  - {fileID: 0}
-  - {fileID: -2640216731569864035}
-  - {fileID: 9135697733404692405}
-  - {fileID: 7374787806262280727}
-  - {fileID: 320393840428118940}
-  - {fileID: 3790131856259189161}
-  - {fileID: 3961073560503842362}
-  - {fileID: 6441420655391226545}
-  InitializedParentNetworkBehaviour: {fileID: 0}
-  InitializedNestedNetworkObjects: []
-  RuntimeParentNetworkBehaviour: {fileID: 0}
-  RuntimeChildNetworkBehaviours: []
-  _isNetworked: 1
-  _isSpawnable: 1
-  _isGlobal: 0
-  _initializeOrder: 0
-  _preventDespawnOnDisconnect: 0
-  _defaultDespawnType: 0
-  NetworkObserver: {fileID: 0}
-  _enablePrediction: 0
-  _predictionType: 0
-  _graphicalObject: {fileID: 0}
-  _detachGraphicalObject: 0
-  _enableStateForwarding: 1
-  _networkTransform: {fileID: 0}
-  _ownerInterpolation: 1
-  _ownerSmoothedProperties: 255
-  _adaptiveInterpolation: 3
-  _spectatorSmoothedProperties: 255
-  _spectatorInterpolation: 2
-  _enableTeleport: 0
-  _teleportThreshold: 1
-  <PrefabId>k__BackingField: 4
-  <SpawnableCollectionId>k__BackingField: 0
-  <AssetPathHash>k__BackingField: 7108391532384683985
-  <SceneId>k__BackingField: 0
-  SerializedTransformProperties:
-    Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 1}
-    Scale: {x: 1, y: 1, z: 1}
-    IsValid: 1
+  sceneId: 0
+  _assetId: 2501429962
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
+--- !u!1 &3126004517396594185 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2940052044353419808, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
+  m_PrefabInstance: {fileID: 264838584189060137}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1923770946650985447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3126004517396594185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d79ff62bc96cb8e4e8d2cf7753dc0375, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  RequireAuthority: 1
 --- !u!1 &3349607528184284733 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3301374950904824340, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
   m_PrefabInstance: {fileID: 264838584189060137}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6441420655391226545
+--- !u!114 &5608359314541237093
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3210,49 +3223,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 3349607528184284733}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
+  m_Script: {fileID: 11500000, guid: a553cb17010b2403e8523b558bffbc14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 7
-  _addedNetworkObject: {fileID: 4275164164498893130}
-  _networkObjectCache: {fileID: 4275164164498893130}
-  _componentConfiguration: 2
-  _synchronizeParent: 0
-  _packing:
-    Position: 1
-    Rotation: 1
-    Scale: 0
-  _useScaledTime: 1
-  _interpolation: 2
-  _extrapolation: 2
-  _enableTeleport: 0
-  _teleportThreshold: 1
-  _clientAuthoritative: 1
-  _sendToOwner: 1
-  _interval: 1
-  _synchronizePosition: 1
-  _positionSensitivity: 0.001
-  _positionSnapping:
-    X: 0
-    Y: 0
-    Z: 0
-  _synchronizeRotation: 1
-  _rotationSnapping:
-    X: 0
-    Y: 0
-    Z: 0
-  _synchronizeScale: 1
-  _scaleSensitivity: 0.001
-  _scaleSnapping:
-    X: 0
-    Y: 0
-    Z: 0
+  syncDirection: 1
+  syncMode: 0
+  syncInterval: 0
+  target: {fileID: 240614798042122997}
+  syncPosition: 1
+  syncRotation: 1
+  syncScale: 0
+  onlySyncOnChange: 1
+  compressRotation: 1
+  interpolatePosition: 1
+  interpolateRotation: 1
+  interpolateScale: 1
+  coordinateSpace: 0
+  timelineOffset: 1
+  showGizmos: 0
+  showOverlay: 0
+  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+  bufferResetMultiplier: 3
+  useFixedUpdate: 0
+  positionSensitivity: 0.01
+  rotationSensitivity: 0.01
+  scaleSensitivity: 0.01
 --- !u!1 &3982795507821439930 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3812682066745618323, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
   m_PrefabInstance: {fileID: 264838584189060137}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3961073560503842362
+--- !u!114 &1768507106870367071
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3261,49 +3262,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 3982795507821439930}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
+  m_Script: {fileID: 11500000, guid: a553cb17010b2403e8523b558bffbc14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 6
-  _addedNetworkObject: {fileID: 4275164164498893130}
-  _networkObjectCache: {fileID: 4275164164498893130}
-  _componentConfiguration: 2
-  _synchronizeParent: 0
-  _packing:
-    Position: 1
-    Rotation: 1
-    Scale: 0
-  _useScaledTime: 1
-  _interpolation: 2
-  _extrapolation: 2
-  _enableTeleport: 0
-  _teleportThreshold: 1
-  _clientAuthoritative: 1
-  _sendToOwner: 1
-  _interval: 1
-  _synchronizePosition: 1
-  _positionSensitivity: 0.001
-  _positionSnapping:
-    X: 0
-    Y: 0
-    Z: 0
-  _synchronizeRotation: 1
-  _rotationSnapping:
-    X: 0
-    Y: 0
-    Z: 0
-  _synchronizeScale: 1
-  _scaleSensitivity: 0.001
-  _scaleSnapping:
-    X: 0
-    Y: 0
-    Z: 0
+  syncDirection: 1
+  syncMode: 0
+  syncInterval: 0
+  target: {fileID: 8655822262148441816}
+  syncPosition: 1
+  syncRotation: 1
+  syncScale: 0
+  onlySyncOnChange: 1
+  compressRotation: 1
+  interpolatePosition: 1
+  interpolateRotation: 1
+  interpolateScale: 1
+  coordinateSpace: 0
+  timelineOffset: 1
+  showGizmos: 0
+  showOverlay: 0
+  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+  bufferResetMultiplier: 3
+  useFixedUpdate: 0
+  positionSensitivity: 0.01
+  rotationSensitivity: 0.01
+  scaleSensitivity: 0.01
 --- !u!1 &4098368562791829474 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4272984985020779467, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
   m_PrefabInstance: {fileID: 264838584189060137}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &320393840428118940
+--- !u!114 &4433187696820650456
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3312,49 +3301,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 4098368562791829474}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
+  m_Script: {fileID: 11500000, guid: a553cb17010b2403e8523b558bffbc14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 4
-  _addedNetworkObject: {fileID: 4275164164498893130}
-  _networkObjectCache: {fileID: 4275164164498893130}
-  _componentConfiguration: 2
-  _synchronizeParent: 0
-  _packing:
-    Position: 1
-    Rotation: 1
-    Scale: 0
-  _useScaledTime: 1
-  _interpolation: 2
-  _extrapolation: 2
-  _enableTeleport: 0
-  _teleportThreshold: 1
-  _clientAuthoritative: 1
-  _sendToOwner: 1
-  _interval: 1
-  _synchronizePosition: 1
-  _positionSensitivity: 0.001
-  _positionSnapping:
-    X: 0
-    Y: 0
-    Z: 0
-  _synchronizeRotation: 1
-  _rotationSnapping:
-    X: 0
-    Y: 0
-    Z: 0
-  _synchronizeScale: 1
-  _scaleSensitivity: 0.001
-  _scaleSnapping:
-    X: 0
-    Y: 0
-    Z: 0
+  syncDirection: 1
+  syncMode: 0
+  syncInterval: 0
+  target: {fileID: 8435621386169012116}
+  syncPosition: 1
+  syncRotation: 1
+  syncScale: 0
+  onlySyncOnChange: 1
+  compressRotation: 1
+  interpolatePosition: 1
+  interpolateRotation: 1
+  interpolateScale: 1
+  coordinateSpace: 0
+  timelineOffset: 1
+  showGizmos: 0
+  showOverlay: 0
+  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+  bufferResetMultiplier: 3
+  useFixedUpdate: 0
+  positionSensitivity: 0.01
+  rotationSensitivity: 0.01
+  scaleSensitivity: 0.01
+--- !u!4 &4619709099495035917 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4877510242296041508, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
+  m_PrefabInstance: {fileID: 264838584189060137}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4700208755958670182 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4798193701684832079, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
   m_PrefabInstance: {fileID: 264838584189060137}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7374787806262280727
+--- !u!114 &3240779692885390727
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3363,46 +3345,70 @@ MonoBehaviour:
   m_GameObject: {fileID: 4700208755958670182}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
+  m_Script: {fileID: 11500000, guid: a553cb17010b2403e8523b558bffbc14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 3
-  _addedNetworkObject: {fileID: 4275164164498893130}
-  _networkObjectCache: {fileID: 4275164164498893130}
-  _componentConfiguration: 2
-  _synchronizeParent: 0
-  _packing:
-    Position: 1
-    Rotation: 1
-    Scale: 0
-  _useScaledTime: 1
-  _interpolation: 2
-  _extrapolation: 2
-  _enableTeleport: 0
-  _teleportThreshold: 1
-  _clientAuthoritative: 1
-  _sendToOwner: 1
-  _interval: 1
-  _synchronizePosition: 1
-  _positionSensitivity: 0.001
-  _positionSnapping:
-    X: 0
-    Y: 0
-    Z: 0
-  _synchronizeRotation: 1
-  _rotationSnapping:
-    X: 0
-    Y: 0
-    Z: 0
-  _synchronizeScale: 1
-  _scaleSensitivity: 0.001
-  _scaleSnapping:
-    X: 0
-    Y: 0
-    Z: 0
+  syncDirection: 1
+  syncMode: 0
+  syncInterval: 0
+  target: {fileID: 7839764990330022577}
+  syncPosition: 1
+  syncRotation: 1
+  syncScale: 0
+  onlySyncOnChange: 1
+  compressRotation: 1
+  interpolatePosition: 1
+  interpolateRotation: 1
+  interpolateScale: 1
+  coordinateSpace: 0
+  timelineOffset: 1
+  showGizmos: 0
+  showOverlay: 0
+  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+  bufferResetMultiplier: 3
+  useFixedUpdate: 0
+  positionSensitivity: 0.01
+  rotationSensitivity: 0.01
+  scaleSensitivity: 0.01
+--- !u!1 &4974921809477858507 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5090928283351871714, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
+  m_PrefabInstance: {fileID: 264838584189060137}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &33621296229085626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4974921809477858507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d79ff62bc96cb8e4e8d2cf7753dc0375, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  RequireAuthority: 1
 --- !u!4 &6112504805103877526 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6304793145192069567, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
+  m_PrefabInstance: {fileID: 264838584189060137}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7839764990330022577 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8025579406049291928, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
+  m_PrefabInstance: {fileID: 264838584189060137}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8435621386169012116 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8556203494894390205, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
+  m_PrefabInstance: {fileID: 264838584189060137}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8655822262148441816 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8913552984557658865, guid: 0f6a8eddd3b3f134cba43472c935bf29, type: 3}
   m_PrefabInstance: {fileID: 264838584189060137}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &9161604903779235079 stripped
