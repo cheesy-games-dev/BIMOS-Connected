@@ -1,13 +1,6 @@
 using UnityEngine;
-using Mirror;
 
 [DefaultExecutionOrder(-1)]
-public class OwnershipAutoAssigner : NetworkBehaviour
+public class OwnershipAutoAssigner : MonoBehaviour
 {
-    [Server]
-    public override void OnStartClient() {
-        base.OnStartClient();
-        netIdentity.RemoveClientAuthority();
-        netIdentity.AssignClientAuthority(NetworkServer.localConnection);
-    }
 }

@@ -1,55 +1,39 @@
-using KadenZombie8.BIMOS.Rig.Spawning;
-using Mirror;
+using KadenZombie8.BIMOS.Rig;
 using System.Collections.Generic;
 using UnityEngine;
+using Riptide;
 
 namespace KadenZombie8.BIMOS.Networking {
-    public class BIMOSNetworkManager : NetworkManager {
+    public class BIMOSNetworkManager : MonoBehaviour {
         public static BIMOSNetworkManager Singleton {
             get; private set;
         }
-        public NetworkRig LocalRig {
+        public Dictionary<ushort, BIMOSRig> RigCache {
             get; internal set;
         }
-        public Dictionary<NetworkConnectionToClient, NetworkRig> RigCache {
-            get; internal set;
-        }
-        private Transform _defaultSpawnPoint;
-
-        [Header("BIMOS"), Tooltip("Standard Rig Prefab:\n" +
-            "Clients spawn as Rig Prefab set by the Server")]
-        public NetworkRig RigPrefab;
-        [Tooltip("Dynamic Spawn:\n" +
-            "True: New Clients spawn at the Servers last spawn point\n" +
-            "False: New Clients spawn at the Servers first spawn point")]
-        public bool DynamicSpawn;
-        [Tooltip("Auto Host:\n" +
-           "Create Server when Game Loads")]
-        public bool AutoHost = true;
-        public override void Awake() {
+        public Server server;
+        public Client client;
+        public bool AutoHost;
+        public void Awake() {
             InitializeOnce();
         }
         private void InitializeOnce() {
             Singleton = this;
+            server = new("BIMOSServer");
+            client = new("BIMOSClient");
             int layer = LayerMask.GetMask("BIMOSRig");
-            Physics.IgnoreLayerCollision(layer, layer, true);
-            if (AutoHost) {
-                StartHost();
-            }
-        }
-        public override void OnStartServer() {
-            base.OnStartServer();
-            _defaultSpawnPoint = SpawnPointManager.Instance.SpawnPoint.transform;
-            playerPrefab = null;
-            autoCreatePlayer = true;        
-            NetworkServer.ReplaceHandler<AddPlayerMessage>((x, y) => OnServerAddPlayer(x));
+            Physics.IgnoreLayerCollision(layer, layer);
+            BIMOSRig.OnRigSpawned += RigSpawned;
         }
 
-        [Server]
-        public override void OnServerAddPlayer(NetworkConnectionToClient conn) {
-            Transform spawn = DynamicSpawn ? SpawnPointManager.Instance.SpawnPoint.transform : _defaultSpawnPoint;
-            var gameobject = Instantiate(RigPrefab, spawn.position, spawn.rotation).gameObject;
-            NetworkServer.AddPlayerForConnection(conn, gameobject);
+        private void RigSpawned(object sender, BIMOSRig e) {
+            var spawnMessage = Message.Create(MessageSendMode.Reliable, ClientToServerMessages.SpawnRigRequest);
+            client.Send(spawnMessage);
+        }
+
+        [MessageHandler((ushort)ClientToServerMessages.SpawnRigRequest)]
+        public static void SpawnRigRequested(ushort fromClientId, Message message) {
+            
         }
     }
 }

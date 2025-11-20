@@ -1,40 +1,35 @@
-using Mirror;
 using KadenZombie8.BIMOS;
 using KadenZombie8.BIMOS.Rig;
 using UnityEngine;
 
-public class GamemodePlayer : NetworkBehaviour
+public class GamemodePlayer : MonoBehaviour
 {
     public float MaxHealth = 30;
-    [SyncVar] public float Health = new();
-    [SyncVar] public uint Kills = new();
-    [SyncVar] public uint Deaths = new();
+    public float Health { get; set; } = new();
+    public uint Kills { get; set; } = new();
+    public uint Deaths { get; set; } = new();
     public BIMOSRig rig;
     public static GamemodePlayer LocalRig = new();
-
-    public override void OnStartClient() {
-        base.OnStartClient();
-        rig ??= GetComponent<BIMOSRig>();
-        if (isLocalPlayer) LocalRig = this;
+    private void Start() {
+        rig = GetComponent<BIMOSRig>();
+        if (!LocalRig)
+            return;
+        LocalRig = this;
     }
 
-    [Server]
     public void NewDeath() {
         Deaths++;
-        Respawn(connectionToClient);
+        RespawnRpc();
     }
 
-    [TargetRpc]
-    public void Respawn(NetworkConnection conn) {
+    public void RespawnRpc() {
         GamemodeMarker.SpawnPlayer(this);
     }
 
-    [Command]
     public void RequestKill() {
         Kills++;
     }
 
-    [Command(requiresAuthority = false)]
     public void RequestDamage(float damage) {
         Health -= damage;
         if (Health <= 0) {

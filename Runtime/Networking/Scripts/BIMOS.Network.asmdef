@@ -3,13 +3,12 @@
     "rootNamespace": "KadenZombie8.BIMOS.Networking",
     "references": [
         "GUID:303e84476c52562438a4cea31bf9b794",
-        "GUID:30817c1a0e6d646d99c048fc403f5979",
-        "GUID:72872094b21c16e48b631b2224833d49",
-        "GUID:627104647b9c04b4ebb8978a92ecac63"
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:d9bbc61d820433c42883dc4de8b0e42f"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
-    "allowUnsafeCode": true,
+    "allowUnsafeCode": false,
     "overrideReferences": false,
     "precompiledReferences": [
         ""

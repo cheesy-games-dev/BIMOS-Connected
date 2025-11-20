@@ -432,6 +432,7 @@ GameObject:
   - component: {fileID: 101474773}
   - component: {fileID: 101474775}
   - component: {fileID: 101474774}
+  - component: {fileID: 101474776}
   m_Layer: 0
   m_Name: Point Light (8)
   m_TagString: Untagged
@@ -542,6 +543,22 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &101474776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101474772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d73b0a95be81246699cf0d9ecdc01863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PreferredRunner: 0
+  Components:
+  - {fileID: 101474775}
+  _guid: 68655e05-3129-42fe-
 --- !u!1 &113333271
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,6 +678,7 @@ GameObject:
   - component: {fileID: 118158260}
   - component: {fileID: 118158262}
   - component: {fileID: 118158261}
+  - component: {fileID: 118158263}
   m_Layer: 0
   m_Name: Point Light (9)
   m_TagString: Untagged
@@ -771,6 +789,22 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &118158263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118158259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d73b0a95be81246699cf0d9ecdc01863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PreferredRunner: 0
+  Components:
+  - {fileID: 118158262}
+  _guid: c174a7e1-bbf3-4421-
 --- !u!1 &134010911
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,6 +816,7 @@ GameObject:
   - component: {fileID: 134010912}
   - component: {fileID: 134010914}
   - component: {fileID: 134010913}
+  - component: {fileID: 134010915}
   m_Layer: 0
   m_Name: Point Light (11)
   m_TagString: Untagged
@@ -892,6 +927,22 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &134010915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134010911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d73b0a95be81246699cf0d9ecdc01863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PreferredRunner: 0
+  Components:
+  - {fileID: 134010914}
+  _guid: a7ca0f61-6960-41f5-
 --- !u!1 &154237883
 GameObject:
   m_ObjectHideFlags: 0
@@ -1022,7 +1073,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2571191359413860487, guid: 82e71acf7d783a54f9f49d839b212b90, type: 3}
       propertyPath: m_ParentAnchorPosition.y
-      value: 0.059000075
+      value: 0.059000015
       objectReference: {fileID: 0}
     - target: {fileID: 2571191359413860487, guid: 82e71acf7d783a54f9f49d839b212b90, type: 3}
       propertyPath: m_ParentAnchorPosition.z
@@ -1072,6 +1123,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pistol (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5277223514764348220, guid: 82e71acf7d783a54f9f49d839b212b90, type: 3}
+      propertyPath: SortKey
+      value: 2099311231
+      objectReference: {fileID: 0}
     - target: {fileID: 5469436307334607539, guid: 82e71acf7d783a54f9f49d839b212b90, type: 3}
       propertyPath: WasActiveDuringEdit
       value: 1
@@ -1105,6 +1160,7 @@ GameObject:
   - component: {fileID: 207279679}
   - component: {fileID: 207279681}
   - component: {fileID: 207279680}
+  - component: {fileID: 207279682}
   m_Layer: 0
   m_Name: Point Light (10)
   m_TagString: Untagged
@@ -1215,6 +1271,22 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &207279682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207279678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d73b0a95be81246699cf0d9ecdc01863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PreferredRunner: 0
+  Components:
+  - {fileID: 207279681}
+  _guid: 8bf4bb3e-8a33-453a-
 --- !u!1 &212285177
 GameObject:
   m_ObjectHideFlags: 0
@@ -1334,6 +1406,7 @@ GameObject:
   - component: {fileID: 347197155}
   - component: {fileID: 347197157}
   - component: {fileID: 347197156}
+  - component: {fileID: 347197158}
   m_Layer: 0
   m_Name: Point Light (13)
   m_TagString: Untagged
@@ -1444,6 +1517,22 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &347197158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347197154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d73b0a95be81246699cf0d9ecdc01863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PreferredRunner: 0
+  Components:
+  - {fileID: 347197157}
+  _guid: b50b5380-76b4-4c5c-
 --- !u!1 &353809571
 GameObject:
   m_ObjectHideFlags: 0
@@ -1552,6 +1641,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 353809571}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &366133419 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3290328338986808433, guid: 4da6aa54e983f034c879e883fd5514f0, type: 3}
+  m_PrefabInstance: {fileID: 1808091653}
+  m_PrefabAsset: {fileID: 0}
+--- !u!81 &366133424 stripped
+AudioListener:
+  m_CorrespondingSourceObject: {fileID: 4786866324462424715, guid: 4da6aa54e983f034c879e883fd5514f0, type: 3}
+  m_PrefabInstance: {fileID: 1808091653}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &366133426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366133419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d73b0a95be81246699cf0d9ecdc01863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PreferredRunner: 0
+  Components:
+  - {fileID: 366133424}
+  _guid: 78a37a69-ed57-4018-
 --- !u!1 &369592905
 GameObject:
   m_ObjectHideFlags: 0
@@ -2342,6 +2457,7 @@ GameObject:
   - component: {fileID: 448757301}
   - component: {fileID: 448757303}
   - component: {fileID: 448757302}
+  - component: {fileID: 448757304}
   m_Layer: 0
   m_Name: Point Light (19)
   m_TagString: Untagged
@@ -2452,6 +2568,22 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &448757304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448757300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d73b0a95be81246699cf0d9ecdc01863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PreferredRunner: 0
+  Components:
+  - {fileID: 448757303}
+  _guid: a27aeacb-2c36-4ba8-
 --- !u!1 &496817230
 GameObject:
   m_ObjectHideFlags: 0
@@ -3060,7 +3192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2571191359413860487, guid: 82e71acf7d783a54f9f49d839b212b90, type: 3}
       propertyPath: m_ParentAnchorPosition.z
-      value: 0.02199936
+      value: 0.021999836
       objectReference: {fileID: 0}
     - target: {fileID: 3966476482433608016, guid: 82e71acf7d783a54f9f49d839b212b90, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3105,6 +3237,10 @@ PrefabInstance:
     - target: {fileID: 4341489784411468778, guid: 82e71acf7d783a54f9f49d839b212b90, type: 3}
       propertyPath: m_Name
       value: Pistol (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5277223514764348220, guid: 82e71acf7d783a54f9f49d839b212b90, type: 3}
+      propertyPath: SortKey
+      value: 3385618066
       objectReference: {fileID: 0}
     - target: {fileID: 5469436307334607539, guid: 82e71acf7d783a54f9f49d839b212b90, type: 3}
       propertyPath: WasActiveDuringEdit
@@ -3188,6 +3324,10 @@ PrefabInstance:
       value: -0.00006222355
       objectReference: {fileID: 0}
     - target: {fileID: 2571191359413860487, guid: 82e71acf7d783a54f9f49d839b212b90, type: 3}
+      propertyPath: m_ParentAnchorPosition.y
+      value: 0.059000075
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571191359413860487, guid: 82e71acf7d783a54f9f49d839b212b90, type: 3}
       propertyPath: m_ParentAnchorPosition.z
       value: 0.021999836
       objectReference: {fileID: 0}
@@ -3234,6 +3374,10 @@ PrefabInstance:
     - target: {fileID: 4341489784411468778, guid: 82e71acf7d783a54f9f49d839b212b90, type: 3}
       propertyPath: m_Name
       value: Pistol (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5277223514764348220, guid: 82e71acf7d783a54f9f49d839b212b90, type: 3}
+      propertyPath: SortKey
+      value: 599076399
       objectReference: {fileID: 0}
     - target: {fileID: 5469436307334607539, guid: 82e71acf7d783a54f9f49d839b212b90, type: 3}
       propertyPath: WasActiveDuringEdit
@@ -3435,6 +3579,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 44370751}
     m_Modifications:
+    - target: {fileID: 1645584498615403467, guid: 8853841a8fa293e42b39789a294e6310, type: 3}
+      propertyPath: SortKey
+      value: 596997243
+      objectReference: {fileID: 0}
     - target: {fileID: 1771343236336048494, guid: 8853841a8fa293e42b39789a294e6310, type: 3}
       propertyPath: sceneId
       value: 1639532669
@@ -3524,6 +3672,7 @@ GameObject:
   - component: {fileID: 790202545}
   - component: {fileID: 790202547}
   - component: {fileID: 790202546}
+  - component: {fileID: 790202548}
   m_Layer: 0
   m_Name: Point Light (4)
   m_TagString: Untagged
@@ -3634,6 +3783,22 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &790202548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790202544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d73b0a95be81246699cf0d9ecdc01863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PreferredRunner: 0
+  Components:
+  - {fileID: 790202547}
+  _guid: e40c624f-9257-4c1b-
 --- !u!1 &814991493
 GameObject:
   m_ObjectHideFlags: 0
@@ -4187,6 +4352,7 @@ GameObject:
   - component: {fileID: 947536801}
   - component: {fileID: 947536803}
   - component: {fileID: 947536802}
+  - component: {fileID: 947536804}
   m_Layer: 0
   m_Name: Point Light (14)
   m_TagString: Untagged
@@ -4297,6 +4463,22 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &947536804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947536800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d73b0a95be81246699cf0d9ecdc01863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PreferredRunner: 0
+  Components:
+  - {fileID: 947536803}
+  _guid: bcc148f1-328e-4d75-
 --- !u!1 &994976322
 GameObject:
   m_ObjectHideFlags: 0
@@ -4308,6 +4490,7 @@ GameObject:
   - component: {fileID: 994976323}
   - component: {fileID: 994976325}
   - component: {fileID: 994976324}
+  - component: {fileID: 994976326}
   m_Layer: 0
   m_Name: Point Light (3)
   m_TagString: Untagged
@@ -4418,6 +4601,22 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &994976326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994976322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d73b0a95be81246699cf0d9ecdc01863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PreferredRunner: 0
+  Components:
+  - {fileID: 994976325}
+  _guid: 17b4691f-c835-40bb-
 --- !u!1 &1014973201
 GameObject:
   m_ObjectHideFlags: 0
@@ -4429,6 +4628,7 @@ GameObject:
   - component: {fileID: 1014973202}
   - component: {fileID: 1014973204}
   - component: {fileID: 1014973203}
+  - component: {fileID: 1014973205}
   m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
@@ -4539,6 +4739,22 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1014973205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014973201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d73b0a95be81246699cf0d9ecdc01863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PreferredRunner: 0
+  Components:
+  - {fileID: 1014973204}
+  _guid: 985d6e4c-c9b9-4e58-
 --- !u!1 &1046770839
 GameObject:
   m_ObjectHideFlags: 0
@@ -4550,6 +4766,7 @@ GameObject:
   - component: {fileID: 1046770840}
   - component: {fileID: 1046770842}
   - component: {fileID: 1046770841}
+  - component: {fileID: 1046770843}
   m_Layer: 0
   m_Name: Point Light (6)
   m_TagString: Untagged
@@ -4660,6 +4877,22 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1046770843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046770839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d73b0a95be81246699cf0d9ecdc01863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PreferredRunner: 0
+  Components:
+  - {fileID: 1046770842}
+  _guid: 9e2b2cd0-954f-450d-
 --- !u!1 &1049944957
 GameObject:
   m_ObjectHideFlags: 0
@@ -4970,6 +5203,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 44370751}
     m_Modifications:
+    - target: {fileID: 1645584498615403467, guid: 8853841a8fa293e42b39789a294e6310, type: 3}
+      propertyPath: SortKey
+      value: 1560636309
+      objectReference: {fileID: 0}
     - target: {fileID: 1771343236336048494, guid: 8853841a8fa293e42b39789a294e6310, type: 3}
       propertyPath: sceneId
       value: 1973099297
@@ -5309,6 +5546,7 @@ GameObject:
   - component: {fileID: 1257911961}
   - component: {fileID: 1257911963}
   - component: {fileID: 1257911962}
+  - component: {fileID: 1257911964}
   m_Layer: 0
   m_Name: Point Light (7)
   m_TagString: Untagged
@@ -5419,6 +5657,22 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1257911964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257911960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d73b0a95be81246699cf0d9ecdc01863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PreferredRunner: 0
+  Components:
+  - {fileID: 1257911963}
+  _guid: aa0726f1-9e3b-45bf-
 --- !u!1 &1259413941
 GameObject:
   m_ObjectHideFlags: 0
@@ -5430,6 +5684,7 @@ GameObject:
   - component: {fileID: 1259413942}
   - component: {fileID: 1259413944}
   - component: {fileID: 1259413943}
+  - component: {fileID: 1259413945}
   m_Layer: 0
   m_Name: Point Light (17)
   m_TagString: Untagged
@@ -5540,6 +5795,22 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1259413945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259413941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d73b0a95be81246699cf0d9ecdc01863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PreferredRunner: 0
+  Components:
+  - {fileID: 1259413944}
+  _guid: 2a33997e-fa5a-4cd3-
 --- !u!1 &1262323906
 GameObject:
   m_ObjectHideFlags: 0
@@ -6228,6 +6499,7 @@ GameObject:
   - component: {fileID: 1330356318}
   - component: {fileID: 1330356320}
   - component: {fileID: 1330356319}
+  - component: {fileID: 1330356321}
   m_Layer: 0
   m_Name: Point Light (2)
   m_TagString: Untagged
@@ -6338,6 +6610,22 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1330356321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330356317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d73b0a95be81246699cf0d9ecdc01863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PreferredRunner: 0
+  Components:
+  - {fileID: 1330356320}
+  _guid: e981b1b4-7b67-4203-
 --- !u!1 &1341648003
 GameObject:
   m_ObjectHideFlags: 0
@@ -7078,6 +7366,7 @@ GameObject:
   - component: {fileID: 1454921721}
   - component: {fileID: 1454921723}
   - component: {fileID: 1454921722}
+  - component: {fileID: 1454921724}
   m_Layer: 0
   m_Name: Point Light (20)
   m_TagString: Untagged
@@ -7188,6 +7477,22 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1454921724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454921720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d73b0a95be81246699cf0d9ecdc01863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PreferredRunner: 0
+  Components:
+  - {fileID: 1454921723}
+  _guid: aeee4935-fd8d-4749-
 --- !u!1001 &1457100180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7255,6 +7560,10 @@ PrefabInstance:
     - target: {fileID: 4341489784411468778, guid: 82e71acf7d783a54f9f49d839b212b90, type: 3}
       propertyPath: m_Name
       value: Pistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 5277223514764348220, guid: 82e71acf7d783a54f9f49d839b212b90, type: 3}
+      propertyPath: SortKey
+      value: 1457698197
       objectReference: {fileID: 0}
     - target: {fileID: 5469436307334607539, guid: 82e71acf7d783a54f9f49d839b212b90, type: 3}
       propertyPath: WasActiveDuringEdit
@@ -7608,6 +7917,7 @@ GameObject:
   - component: {fileID: 1564569934}
   - component: {fileID: 1564569936}
   - component: {fileID: 1564569935}
+  - component: {fileID: 1564569937}
   m_Layer: 0
   m_Name: Point Light (16)
   m_TagString: Untagged
@@ -7718,6 +8028,22 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1564569937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564569933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d73b0a95be81246699cf0d9ecdc01863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PreferredRunner: 0
+  Components:
+  - {fileID: 1564569936}
+  _guid: 8bed4039-f952-471d-
 --- !u!1 &1640799178
 GameObject:
   m_ObjectHideFlags: 0
@@ -8084,6 +8410,7 @@ GameObject:
   - component: {fileID: 1692747311}
   - component: {fileID: 1692747313}
   - component: {fileID: 1692747312}
+  - component: {fileID: 1692747314}
   m_Layer: 0
   m_Name: Point Light (15)
   m_TagString: Untagged
@@ -8194,6 +8521,22 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1692747314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692747310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d73b0a95be81246699cf0d9ecdc01863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PreferredRunner: 0
+  Components:
+  - {fileID: 1692747313}
+  _guid: 1f537da8-5fca-4d7c-
 --- !u!1 &1723181625
 GameObject:
   m_ObjectHideFlags: 0
@@ -8341,6 +8684,7 @@ GameObject:
   - component: {fileID: 1725424471}
   - component: {fileID: 1725424473}
   - component: {fileID: 1725424472}
+  - component: {fileID: 1725424474}
   m_Layer: 0
   m_Name: Point Light (12)
   m_TagString: Untagged
@@ -8451,6 +8795,22 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1725424474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725424470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d73b0a95be81246699cf0d9ecdc01863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PreferredRunner: 0
+  Components:
+  - {fileID: 1725424473}
+  _guid: 83b9cf22-54b7-4ecc-
 --- !u!1 &1736897456
 GameObject:
   m_ObjectHideFlags: 0
@@ -9924,6 +10284,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 456848581784540276, guid: 4da6aa54e983f034c879e883fd5514f0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 456848581784540276, guid: 4da6aa54e983f034c879e883fd5514f0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4141920224076196924, guid: 4da6aa54e983f034c879e883fd5514f0, type: 3}
       propertyPath: m_Name
       value: '[NETMOS] Managers'
@@ -9968,10 +10336,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7429056041877880924, guid: 4da6aa54e983f034c879e883fd5514f0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7429056041877880924, guid: 4da6aa54e983f034c879e883fd5514f0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7477555072867020225, guid: 4da6aa54e983f034c879e883fd5514f0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7477555072867020225, guid: 4da6aa54e983f034c879e883fd5514f0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7477555072867020225, guid: 4da6aa54e983f034c879e883fd5514f0, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525547292228120681, guid: 4da6aa54e983f034c879e883fd5514f0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525547292228120681, guid: 4da6aa54e983f034c879e883fd5514f0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525547292228120681, guid: 4da6aa54e983f034c879e883fd5514f0, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3290328338986808433, guid: 4da6aa54e983f034c879e883fd5514f0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 366133426}
   m_SourcePrefab: {fileID: 100100000, guid: 4da6aa54e983f034c879e883fd5514f0, type: 3}
 --- !u!1 &1808892567
 GameObject:
@@ -12111,6 +12514,7 @@ GameObject:
   - component: {fileID: 2107065088}
   - component: {fileID: 2107065090}
   - component: {fileID: 2107065089}
+  - component: {fileID: 2107065091}
   m_Layer: 0
   m_Name: Point Light (18)
   m_TagString: Untagged
@@ -12221,6 +12625,22 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &2107065091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107065087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d73b0a95be81246699cf0d9ecdc01863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PreferredRunner: 0
+  Components:
+  - {fileID: 2107065090}
+  _guid: 5a4bf6fb-837e-4ca0-
 --- !u!1 &2129671019
 GameObject:
   m_ObjectHideFlags: 0
@@ -12504,31 +12924,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1616104274681215943, guid: cf1e6a2ddb87217498a6c58675a1e9cb, type: 3}
       propertyPath: spawnPrefabs.Array.size
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1616104274681215943, guid: cf1e6a2ddb87217498a6c58675a1e9cb, type: 3}
       propertyPath: 'spawnPrefabs.Array.data[0]'
       value: 
-      objectReference: {fileID: 3239383796916779311, guid: f83beb2ebe9a8f24c8afdd534bd8bdc7, type: 3}
+      objectReference: {fileID: 7625905610841724517, guid: 8853841a8fa293e42b39789a294e6310, type: 3}
     - target: {fileID: 1616104274681215943, guid: cf1e6a2ddb87217498a6c58675a1e9cb, type: 3}
       propertyPath: 'spawnPrefabs.Array.data[1]'
       value: 
-      objectReference: {fileID: 2905305412102676885, guid: 67f90e909f47fc24dbd9ee70c6822b7e, type: 3}
+      objectReference: {fileID: 2182755850891756195, guid: 9c178db0d39563b42a274ef940320f00, type: 3}
     - target: {fileID: 1616104274681215943, guid: cf1e6a2ddb87217498a6c58675a1e9cb, type: 3}
       propertyPath: 'spawnPrefabs.Array.data[2]'
       value: 
-      objectReference: {fileID: 7625905610841724517, guid: 8853841a8fa293e42b39789a294e6310, type: 3}
+      objectReference: {fileID: 4341489784411468778, guid: 82e71acf7d783a54f9f49d839b212b90, type: 3}
     - target: {fileID: 1616104274681215943, guid: cf1e6a2ddb87217498a6c58675a1e9cb, type: 3}
       propertyPath: 'spawnPrefabs.Array.data[3]'
       value: 
-      objectReference: {fileID: 2182755850891756195, guid: 9c178db0d39563b42a274ef940320f00, type: 3}
+      objectReference: {fileID: 4341489784411468778, guid: 82e71acf7d783a54f9f49d839b212b90, type: 3}
     - target: {fileID: 1616104274681215943, guid: cf1e6a2ddb87217498a6c58675a1e9cb, type: 3}
       propertyPath: 'spawnPrefabs.Array.data[4]'
       value: 
       objectReference: {fileID: 4341489784411468778, guid: 82e71acf7d783a54f9f49d839b212b90, type: 3}
     - target: {fileID: 4527843923321488551, guid: cf1e6a2ddb87217498a6c58675a1e9cb, type: 3}
       propertyPath: m_Name
-      value: '[NETMOS] Network Manager'
+      value: '[NETMOS] Gamemode Manager'
       objectReference: {fileID: 0}
     - target: {fileID: 6607551427380718379, guid: cf1e6a2ddb87217498a6c58675a1e9cb, type: 3}
       propertyPath: m_LocalPosition.x

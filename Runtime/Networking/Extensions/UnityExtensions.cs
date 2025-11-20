@@ -19,5 +19,17 @@ namespace KadenZombie8.BIMOS
             var index = UnityEngine.Random.Range(0, array.Length - 1);
             return array[index];
         }
+
+        public static Rigidbody CopyFromTo(this Rigidbody from, Rigidbody to) {
+            from.position = to.position;
+            from.rotation = to.rotation;
+            return from;
+        }
+
+        public static Transform CopyFromTo(this Transform from, Transform to) {
+            from.position = to.position;
+            from.rotation = to.rotation;
+            return from;
+        }
     }
 }
