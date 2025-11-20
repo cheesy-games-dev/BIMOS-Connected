@@ -18,7 +18,6 @@ namespace KadenZombie8.BIMOS.Rig
         {
             if (Instance != null && Instance != this)
             {
-                Destroy(gameObject);
                 return;
             }
             Instance = this;

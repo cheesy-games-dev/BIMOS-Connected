@@ -9,8 +9,6 @@ namespace KadenZombie8.BIMOS.Networking
     {
         public PhysicsRig physicsRig;
         private void Start() {
-            if (physicsRig.enabled)
-                return;
             physicsRig.Colliders.Body.AddComponent<AutoGrabbable>();
             physicsRig.Colliders.Head.AddComponent<AutoGrabbable>();
             physicsRig.Colliders.LeftHand.AddComponent<AutoGrabbable>();

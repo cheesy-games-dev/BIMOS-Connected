@@ -31,5 +31,15 @@ namespace KadenZombie8.BIMOS
             from.rotation = to.rotation;
             return from;
         }
+
+        public static Vector3 Lerp(this Vector3 from, Vector3 to, float t) {
+            from = Vector3.Lerp(from, to, t);
+            return from;
+        }
+
+        public static Quaternion Lerp(this Quaternion from, Quaternion to, float t) {
+            from = Quaternion.Lerp(from, to, t);
+            return from;
+        }
     }
 }
