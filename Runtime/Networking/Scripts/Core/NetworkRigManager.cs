@@ -22,11 +22,6 @@ namespace KadenZombie8.BIMOS.Networking {
         public ServerManager server;
         public ClientManager client;
         public bool AutoPhysicsRigGrips = true;
-        public List<string> bannedObjects = new() {
-            "UIRig",
-            "EventSytem",
-            "ThirdPersonCamera",
-        };  
         public void Awake() {
             InitializeOnce();
         }
@@ -63,6 +58,7 @@ namespace KadenZombie8.BIMOS.Networking {
             var rig = Instantiate(BIMOSRig.Instance);
             rig.enabled = false;
             rig.ControllerRig.SetActive(false);
+            rig.GetComponents<SettingsMenu>().ToList().ForEach(e => Destroy(e.gameObject));
             rig.GetComponents<EventSystem>().ToList().ForEach(e => Destroy(e.gameObject));
             rig.GetComponents<Camera>().ToList().ForEach(e => Destroy(e));
             if (AutoPhysicsRigGrips) {
