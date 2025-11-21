@@ -14,10 +14,10 @@ namespace BIMOS.Editor
             base.OnInspectorGUI ();
             foreach (var target in targets) {
                 var grabbable = (Grabbable)target;
-                bool hasNetworkGrip = grabbable.GetComponent<NetworkGrip>();
+                bool hasNetworkGrip = grabbable.GetComponent<GrabbableView>();
                 if (!hasNetworkGrip) {
                     if (GUILayout.Button("Add Network Grip")) {
-                        grabbable.AddComponent<NetworkGrip>();
+                        grabbable.AddComponent<GrabbableView>();
                         EditorUtility.SetDirty(target);
                         AssetDatabase.SaveAssetIfDirty(target);
                     }

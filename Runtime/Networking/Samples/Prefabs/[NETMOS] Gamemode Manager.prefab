@@ -12,14 +12,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: '[NETMOS] Gamemode Manager'
       objectReference: {fileID: 0}
-    - target: {fileID: 2871479844772139566, guid: a00c305d78b055a41aee87dd5d889252, type: 3}
-      propertyPath: 'GhostRigPrefab.RawGuidValue.Array.data[0]'
-      value: 2634494448656661496
-      objectReference: {fileID: 0}
-    - target: {fileID: 2871479844772139566, guid: a00c305d78b055a41aee87dd5d889252, type: 3}
-      propertyPath: 'GhostRigPrefab.RawGuidValue.Array.data[1]'
-      value: -4053846271522394168
-      objectReference: {fileID: 0}
     - target: {fileID: 7639997166650147522, guid: a00c305d78b055a41aee87dd5d889252, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -60,9 +52,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 573581795204879047, guid: a00c305d78b055a41aee87dd5d889252, type: 3}
-    - {fileID: 8910537672403570704, guid: a00c305d78b055a41aee87dd5d889252, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

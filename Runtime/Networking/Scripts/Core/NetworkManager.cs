@@ -1,95 +1,112 @@
-using FishNet;
-using FishNet.Broadcast;
-using FishNet.Connection;
-using FishNet.Managing.Client;
-using FishNet.Managing.Server;
-using FishNet.Transporting;
 using KadenZombie8.BIMOS.Rig;
-using System;
+using KadenZombie8.Pooling;
+using Mirror;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 namespace KadenZombie8.BIMOS.Networking {
-    public class NetworkRigManager : MonoBehaviour {
-        public static NetworkRigManager Singleton {
+    public class NetworkManager : Mirror.NetworkManager {
+        public static NetworkManager Singleton {
             get; private set;
         }
         public Dictionary<ushort, BIMOSRig> RigCache {
             get; internal set;
         } = new();
-        public ServerManager server;
-        public ClientManager client;
-        public bool AutoPhysicsRigGrips = true;
-        public void Awake() {
+        public bool autoPhysicsRigGrips = true;
+        public PoolConfig rigsPoolConfig;
+        public PoolConfig entitiesPoolConfig;
+        public override void Awake() {
+            base.Awake();
             InitializeOnce();
         }
+
         private void InitializeOnce() {
+            SetProperties();
+            Register();      
+        }
+
+        private void SetProperties() {
             Singleton = this;
-            server = GetComponent<ServerManager>();
-            client = GetComponent<ClientManager>();
+            autoCreatePlayer = false;
+            playerPrefab = null;
+        }
+
+        private void Register() {
             int layer = LayerMask.GetMask("BIMOSRig");
             Physics.IgnoreLayerCollision(layer, layer);
+            PoolManager.Instance.RegisterPool(rigsPoolConfig);
+            PoolManager.Instance.RegisterPool(entitiesPoolConfig);
             BIMOSRig.OnRigSpawned += RigSpawned;
             RegisterBroadcasts();
         }
 
         private void RegisterBroadcasts() {
-            server.RegisterBroadcast<SpawnRig>(SpawnRigHandler);
-            client.RegisterBroadcast<SpawnRig>(SpawnRigClients);
-            server.RegisterBroadcast<SyncRig>(SyncRigHandler);
-            client.RegisterBroadcast<SyncRig>(SyncRigClients);
+            NetworkServer.RegisterHandler<SpawnRig>(SpawnRigHandler);
+            NetworkClient.RegisterHandler<SpawnRig>(SpawnRigClients);
+            NetworkServer.RegisterHandler<SyncRig>(SyncRigHandler);
+            NetworkClient.RegisterHandler<SyncRig>(SyncRigClients);
         }
 
-        private void SyncRigClients(SyncRig message, Channel channel) {
+        private void SyncRigClients(SyncRig message) {
+            if (message.Id == NetworkServer.localConnection.connectionId)
+                return;
             if (RigCache.TryGetValue(message.Id, out var rig))
                 message.Deserialize(rig);
             else
-                SpawnRigClients(new(message.Id), channel);
+                SpawnRigClients(new(message.Id));
         }
 
-        private void SyncRigHandler(NetworkConnection connection, SyncRig rig, Channel channel) {
-            rig.Id = (ushort)connection.ClientId;
-            server.BroadcastExcept(connection, rig);
+        private void SyncRigHandler(NetworkConnectionToClient connection, SyncRig message) {
+            message.Id = (ushort)connection.connectionId;
+            NetworkServer.SendToAll(message);
         }
 
-        private void SpawnRigClients(SpawnRig broadcast, Channel channel) {
-            var rig = Instantiate(BIMOSRig.Instance);
-            rig.enabled = false;
+        private void SpawnRigClients(SpawnRig message) {
+            var rig = PoolManager.Instance.AddToPool(rigsPoolConfig.PoolID, BIMOSRig.Instance.gameObject).GetComponent<BIMOSRig>();
             rig.ControllerRig.SetActive(false);
             rig.GetComponents<SettingsMenu>().ToList().ForEach(e => Destroy(e.gameObject));
             rig.GetComponents<EventSystem>().ToList().ForEach(e => Destroy(e.gameObject));
             rig.GetComponents<Camera>().ToList().ForEach(e => Destroy(e));
-            if (AutoPhysicsRigGrips) {
+            if (autoPhysicsRigGrips) {
                 rig.AddComponent<PhysicsRigGrips>().physicsRig = rig.PhysicsRig;
             }
-            RigCache.Add(broadcast.Id, rig);
+            RigCache.Add(message.Id, rig);
         }
 
-        private void SpawnRigHandler(NetworkConnection connection, SpawnRig rig, Channel channel) {
-            rig.Id = (ushort)connection.ClientId;
-            server.BroadcastExcept(connection, rig);
+        private void SpawnRigHandler(NetworkConnectionToClient connection, SpawnRig message) {
+            message.Id = (ushort)connection.connectionId;
+            NetworkServer.SendToAll(message);
         }
 
         private void RigSpawned(object sender, BIMOSRig e) {
-            client.Broadcast<SpawnRig>(new());
+            var message = new SpawnRig();
+            if (NetworkClient.ready)
+                NetworkClient.Send(message);
+            else
+                NetworkClient.Ready();
         }
 
         private void FixedUpdate() {
-            if (!client.Started)
+            if(Keyboard.current.tabKey.isPressed) Cursor.lockState = CursorLockMode.None;
+            if (!NetworkClient.active)
                 return;
             SyncBIMOSRig();
         }
 
         private void SyncBIMOSRig() {
-            var broadcast = new SyncRig();
-            broadcast.Serialize(BIMOSRig.Instance);
-            client.Broadcast(broadcast);
+            var message = new SyncRig();
+            message.Serialize(BIMOSRig.Instance);
+            if (NetworkClient.ready)
+                NetworkClient.Send(message);
+            else
+                NetworkClient.Ready();
         }
     }
 
-    public struct SpawnRig : IBroadcast {
+    public struct SpawnRig : NetworkMessage {
         public ushort Id {
             get; set;
         }
@@ -98,7 +115,7 @@ namespace KadenZombie8.BIMOS.Networking {
         }
     }
 
-    public struct SyncRig : IBroadcast {
+    public struct SyncRig : NetworkMessage {
         public ushort Id {
             get; set;
         }
