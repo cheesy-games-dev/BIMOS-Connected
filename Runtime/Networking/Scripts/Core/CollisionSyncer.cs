@@ -1,7 +1,7 @@
 using Mirror;
 using System;
 using UnityEngine;
-
+using KadenZombie8.BIMOS.Entity;
 namespace KadenZombie8.BIMOS.Networking
 {
     [RequireComponent(typeof(Collider))]

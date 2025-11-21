@@ -1,7 +1,6 @@
 using UnityEngine;
 
-namespace KadenZombie8.BIMOS.Networking
-{
+namespace KadenZombie8.BIMOS.Entity {
     public class BIMOSBody : MonoBehaviour
     {
         public Rigidbody Rigidbody {
@@ -9,6 +8,29 @@ namespace KadenZombie8.BIMOS.Networking
         }
         public ArticulationBody ArticulationBody {
             get; set;
+        }
+        public bool HasPhysicsBody => Rigidbody || ArticulationBody;
+        public bool UseGravity {
+            get {
+                return Rigidbody ? Rigidbody.useGravity : ArticulationBody.useGravity;
+            }
+            set {
+                if (Rigidbody)
+                    Rigidbody.useGravity = value;
+                else
+                    ArticulationBody.useGravity = value;
+            }
+        }
+        public bool Immovable {
+            get {
+                return Rigidbody ? Rigidbody.isKinematic : ArticulationBody.immovable;
+            }
+            set {
+                if (Rigidbody)
+                    Rigidbody.isKinematic = value;
+                else
+                    ArticulationBody.immovable = value;
+            }
         }
         public Vector3 Velocity {
             get {
@@ -30,28 +52,7 @@ namespace KadenZombie8.BIMOS.Networking
                     ArticulationBody.angularVelocity = value;
             }
         }
-        public bool IsFrozen {
-            get {
-                return Rigidbody ? Rigidbody.isKinematic : ArticulationBody.immovable;
-            }
-            set {
-                if (Rigidbody)
-                    Rigidbody.isKinematic = value;
-                else
-                    ArticulationBody.immovable = value;
-            }
-        }
-        public bool UseGravity {
-            get {
-                return Rigidbody ? Rigidbody.useGravity : ArticulationBody.useGravity;
-            }
-            set {
-                if (Rigidbody)
-                    Rigidbody.useGravity = value;
-                else
-                    ArticulationBody.useGravity = value;
-            }
-        }
+        
         public void AddForce(Vector3 force, [UnityEngine.Internal.DefaultValue("ForceMode.Force")] ForceMode mode) {
             if (Rigidbody)
                 Rigidbody.AddForce(force, mode);
